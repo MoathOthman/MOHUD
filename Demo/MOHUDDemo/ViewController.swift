@@ -35,10 +35,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showSubtitle(sender: AnyObject) {
-        MOHUD.showSubtitle(title: "Conntection", subtitle: "Please Wait", period: 3)
+        MOHUD.showSubtitle(title: "Connection", subtitle: "Please Wait", period: 3)
     }
     @IBAction func showFailure(sender: AnyObject) {
-        MOHUD.showWithError("Failed :X")
+        MOHUD.showWithError("Failed :(")
     }
     @IBOutlet weak var showFailure: UIButton!
 }

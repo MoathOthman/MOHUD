@@ -190,6 +190,7 @@ extension MOHUD {
         if let _tL = hud.titleLabel {
             if self.titleString != "" {
                 _tL.text = self.titleString
+                _tL.adjustsFontSizeToFitWidth = true
             }
         }
     }

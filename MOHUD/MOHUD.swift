@@ -14,16 +14,18 @@ import UIKit
     @IBOutlet weak var loaderContainer: UIVisualEffectView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     //MARK: variables
     var statusString: String = ""
-    var failureString:String = ""
+    var failureString: String = ""
+    var titleString: String = ""
 
     override func viewWillAppear(animated: Bool) {
         if MOHUD.me != nil {
             self.commonSetup(MOHUD.me!)
         }
     }
-    //MARK: Construct
+    //MARK: Constructor
     class func ME(_me:MOHUD?) -> MOHUD?{
         dismiss() // if any there dismiss it
         me = _me
@@ -33,14 +35,9 @@ import UIKit
         }
         return nil
     }//0x7ff102d7e410
-    class func ProgressHUD() -> MOHUD {
-        return ME(self.make(.progress) as? MOHUD)!
-    }
+    //MARK: Factory
     class func MakeProgressHUD() {
          ME(self.make(.progress) as? MOHUD)
-    }
-    internal class func SuccessHUD() -> MOHUD {
-        return ME(self.make(.success) as? MOHUD)!
     }
     class func MakeSuccessHUD() {
          ME(self.make(.success) as? MOHUD)
@@ -48,7 +45,23 @@ import UIKit
     class func MakeFailureHUD() {
         ME(self.make(.failure) as? MOHUD)
     }
-
+    class func MakeSubtitleHUD() {
+        ME(self.make(.subtitle) as? MOHUD)
+    }
+    //MARK: Subtitle
+    class func showSubtitle(title title:String, subtitle:String) {
+        MakeSubtitleHUD()
+        MOHUD.me?.statusString = subtitle
+        MOHUD.me?.titleString = title
+        MOHUD.me?.show()
+    }
+    class func showSubtitle(title title:String, subtitle:String, period: NSTimeInterval) {
+        MakeSubtitleHUD()
+        MOHUD.me?.statusString = subtitle
+        MOHUD.me?.titleString = title
+        MOHUD.me?.show()
+        MOHUD.me?.hide(afterDelay: period)
+    }
     //MARK: Fail
     class func showWithError(errorString:String) {
         MakeFailureHUD()
@@ -127,7 +140,7 @@ import UIKit
         hideTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self.classForCoder, selector: Selector("dismiss"), userInfo: nil, repeats: false)
     }
 
-      @IBAction private func hideHud(sender: AnyObject) {
+    @IBAction private func hideHud(sender: AnyObject) {
         MOHUD.dismiss()
     }
 }
@@ -142,7 +155,7 @@ struct MOStoryBoardID {
 }
 
 enum MOSceneType {
-    case progress,success,failure
+    case progress,success,failure,subtitle
 }
 
 extension MOHUD {
@@ -155,6 +168,8 @@ extension MOHUD {
             return mainStoryBoard.instantiateViewControllerWithIdentifier(MOStoryBoardID.success)
         case .failure:
             return mainStoryBoard.instantiateViewControllerWithIdentifier(MOStoryBoardID.failure)
+        case .subtitle:
+            return mainStoryBoard.instantiateViewControllerWithIdentifier(MOStoryBoardID.subtitle)
         }
     }
 }
@@ -170,6 +185,11 @@ extension MOHUD {
         if let _sl = hud.statusLabel {
             if self.statusString != "" {
             _sl.text = self.statusString
+            }
+        }
+        if let _tL = hud.titleLabel {
+            if self.titleString != "" {
+                _tL.text = self.titleString
             }
         }
     }

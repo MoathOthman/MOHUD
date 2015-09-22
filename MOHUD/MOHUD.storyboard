@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--MOHUD-->
@@ -96,41 +97,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-u1-WaS">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-u1-WaS">
                                 <rect key="frame" x="61" y="183" width="198" height="201"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="Kf0-J8-ezk">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kf0-J8-ezk">
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMQ-zn-7Bd">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="198" height="128"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="lwd-Cz-gMP">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="198" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZVM-VT-7n6">
-                                                        <rect key="frame" x="81" y="82" width="37" height="37"/>
-                                                        <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </activityIndicatorView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connecting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mm-XY-Dl5">
-                                                        <rect key="frame" x="13" y="8" width="173" height="46"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
                                             </view>
                                             <vibrancyEffect>
                                                 <blurEffect style="light"/>
                                             </vibrancyEffect>
                                         </visualEffectView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTe-PT-7dA">
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZVM-VT-7n6">
+                                            <rect key="frame" x="80" y="82" width="37" height="37"/>
+                                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </activityIndicatorView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTe-PT-7dA">
                                             <rect key="frame" x="23" y="136" width="160" height="46"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mm-XY-Dl5">
+                                            <rect key="frame" x="12" y="10" width="173" height="46"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="2Mm-XY-Dl5" secondAttribute="trailing" constant="13" id="8sa-Ks-0LM"/>
+                                        <constraint firstItem="ZVM-VT-7n6" firstAttribute="centerX" secondItem="Kf0-J8-ezk" secondAttribute="centerX" id="9ZZ-4O-yFq"/>
+                                        <constraint firstItem="2Mm-XY-Dl5" firstAttribute="top" secondItem="Kf0-J8-ezk" secondAttribute="top" constant="10" id="9qC-F1-84R"/>
+                                        <constraint firstItem="ZVM-VT-7n6" firstAttribute="centerY" secondItem="Kf0-J8-ezk" secondAttribute="centerY" id="Bzr-rL-day"/>
+                                        <constraint firstAttribute="trailing" secondItem="GTe-PT-7dA" secondAttribute="trailing" constant="15" id="DNW-RW-GUB"/>
+                                        <constraint firstItem="2Mm-XY-Dl5" firstAttribute="leading" secondItem="Kf0-J8-ezk" secondAttribute="leading" constant="12" id="SX4-bR-od2"/>
+                                        <constraint firstAttribute="bottom" secondItem="GTe-PT-7dA" secondAttribute="bottom" constant="19" id="U4h-v9-9dO"/>
+                                        <constraint firstItem="GTe-PT-7dA" firstAttribute="leading" secondItem="Kf0-J8-ezk" secondAttribute="leading" constant="23" id="b53-WS-bh0"/>
+                                        <constraint firstItem="GTe-PT-7dA" firstAttribute="top" secondItem="ZVM-VT-7n6" secondAttribute="bottom" constant="17" id="bvh-YK-h6N"/>
+                                        <constraint firstItem="ZVM-VT-7n6" firstAttribute="top" secondItem="2Mm-XY-Dl5" secondAttribute="bottom" constant="26" id="dk9-zr-DGI"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                                 <userDefinedRuntimeAttributes>
@@ -141,9 +152,17 @@
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mz8-u1-WaS" firstAttribute="height" secondItem="nyn-8u-IIG" secondAttribute="height" multiplier="201:568" id="4Fp-RR-j8V"/>
+                            <constraint firstItem="mz8-u1-WaS" firstAttribute="width" secondItem="nyn-8u-IIG" secondAttribute="width" multiplier="198:320" id="Vo0-vS-dRr"/>
+                            <constraint firstItem="mz8-u1-WaS" firstAttribute="centerY" secondItem="nyn-8u-IIG" secondAttribute="centerY" id="YKg-Jc-QUp"/>
+                            <constraint firstItem="mz8-u1-WaS" firstAttribute="centerX" secondItem="nyn-8u-IIG" secondAttribute="centerX" id="pGQ-Ap-SOY"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loaderContainer" destination="mz8-u1-WaS" id="mpe-4j-lkX"/>
+                        <outlet property="statusLabel" destination="GTe-PT-7dA" id="Sox-w7-8TY"/>
+                        <outlet property="titleLabel" destination="2Mm-XY-Dl5" id="4ED-DE-t8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdp-tN-oXl" userLabel="First Responder" sceneMemberID="firstResponder"/>

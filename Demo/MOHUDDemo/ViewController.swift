@@ -24,7 +24,6 @@ class ViewController: UIViewController {
 
     @IBAction func showDefault(sender: AnyObject) {
         MOHUD.show(periodOfTime:2)
-
     }
 
     @IBAction func showWithStatus(sender: AnyObject) {
@@ -35,6 +34,9 @@ class ViewController: UIViewController {
         MOHUD.showSuccess("You Made it")
     }
 
+    @IBAction func showSubtitle(sender: AnyObject) {
+        MOHUD.showSubtitle(title: "Conntection", subtitle: "Please Wait", period: 3)
+    }
     @IBAction func showFailure(sender: AnyObject) {
         MOHUD.showWithError("Failed :X")
     }

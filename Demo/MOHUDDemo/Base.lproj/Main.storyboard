@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,12 +16,105 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-zE-lzf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOHUD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCN-id-kQm">
+                                <rect key="frame" x="189" y="28" width="223" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="m7Y-QQ-HDc"/>
+                                    <constraint firstAttribute="height" constant="50" id="mBa-PP-bwZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jn-Xa-znF">
+                                <rect key="frame" x="226" y="112" width="148" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="4rx-9M-el2"/>
+                                    <constraint firstAttribute="width" constant="148" id="yjs-kL-w0e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="34"/>
+                                <state key="normal" title="Show">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDefault:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4lY-tw-UdM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVq-qW-q5I">
+                                <rect key="frame" x="174" y="187" width="252" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="hPc-hm-ZeD"/>
+                                    <constraint firstAttribute="width" constant="252" id="qyU-cu-f0H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="34"/>
+                                <state key="normal" title="Show with Status">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWithStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHA-Hq-QDl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlh-lI-I1B">
+                                <rect key="frame" x="174" y="258" width="252" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="5Nf-sH-Gb6"/>
+                                    <constraint firstAttribute="height" constant="63" id="yqK-tk-vgE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="34"/>
+                                <state key="normal" title="Show Success">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSuccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gmw-rq-EAC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGH-e9-nB9">
+                                <rect key="frame" x="174" y="329" width="252" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="F3S-8C-5pU"/>
+                                    <constraint firstAttribute="width" constant="252" id="NIV-f8-1g2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="34"/>
+                                <state key="normal" title="Show Failure">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFailure:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FTX-jZ-Kwk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RGH-e9-nB9" firstAttribute="top" secondItem="Xlh-lI-I1B" secondAttribute="bottom" constant="8" id="17Q-Qv-mFc"/>
+                            <constraint firstItem="3Jn-Xa-znF" firstAttribute="centerX" secondItem="nCN-id-kQm" secondAttribute="centerX" id="GT4-mR-0Kd"/>
+                            <constraint firstItem="Xlh-lI-I1B" firstAttribute="top" secondItem="cVq-qW-q5I" secondAttribute="bottom" constant="8" id="GwK-WQ-OaF"/>
+                            <constraint firstItem="3Jn-Xa-znF" firstAttribute="top" secondItem="nCN-id-kQm" secondAttribute="bottom" constant="34" id="KNI-QU-1Uv"/>
+                            <constraint firstItem="nCN-id-kQm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Ki3-xk-EYb"/>
+                            <constraint firstItem="nCN-id-kQm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LPe-v2-6zW"/>
+                            <constraint firstItem="ar1-zE-lzf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Rea-5p-Acw"/>
+                            <constraint firstItem="RGH-e9-nB9" firstAttribute="centerX" secondItem="Xlh-lI-I1B" secondAttribute="centerX" id="V1g-ba-PRM"/>
+                            <constraint firstItem="cVq-qW-q5I" firstAttribute="top" secondItem="3Jn-Xa-znF" secondAttribute="bottom" constant="12" id="Zlk-dX-Fc2"/>
+                            <constraint firstItem="cVq-qW-q5I" firstAttribute="centerX" secondItem="3Jn-Xa-znF" secondAttribute="centerX" id="oYO-bb-WPF"/>
+                            <constraint firstItem="ar1-zE-lzf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="tCn-Cb-xXK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ar1-zE-lzf" secondAttribute="trailing" constant="-20" id="u4H-ZY-nzX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ar1-zE-lzf" secondAttribute="bottom" id="wWh-sD-xkW"/>
+                            <constraint firstItem="Xlh-lI-I1B" firstAttribute="centerX" secondItem="cVq-qW-q5I" secondAttribute="centerX" id="ztB-hc-ciQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="showFailure" destination="RGH-e9-nB9" id="OVh-lZ-JLr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="385"/>
+            <point key="canvasLocation" x="202" y="383"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="213" height="390"/>
+    </resources>
 </document>

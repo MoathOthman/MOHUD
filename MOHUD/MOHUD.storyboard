@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
     </dependencies>
     <scenes>
         <!--MOHUD-->
         <scene sceneID="YBz-UC-0oH">
             <objects>
-                <viewController storyboardIdentifier="Default" modalPresentationStyle="overCurrentContext" id="vna-RR-cwu" customClass="MOHUD" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Default" modalPresentationStyle="overCurrentContext" id="vna-RR-cwu" customClass="MOHUD" customModule="MOHUDDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dbT-jE-LxY"/>
                         <viewControllerLayoutGuide type="bottom" id="Rcg-np-KFx"/>
@@ -70,7 +70,6 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" red="0.62002626680529538" green="0.62079782196969702" blue="0.60732067507447318" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="aRO-VP-6Qo" secondAttribute="centerX" id="PEe-7C-5QV"/>
                             <constraint firstAttribute="centerY" secondItem="aRO-VP-6Qo" secondAttribute="centerY" id="YLY-J9-CNG"/>
@@ -88,7 +87,7 @@
         <!--MOHUD-->
         <scene sceneID="lIZ-Of-Wm2">
             <objects>
-                <viewController storyboardIdentifier="subtitle" modalPresentationStyle="overCurrentContext" id="rO9-rG-lAh" customClass="MOHUD" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="subtitle" modalPresentationStyle="overCurrentContext" id="rO9-rG-lAh" customClass="MOHUD" customModule="MOHUDDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MIu-ju-wE8"/>
                         <viewControllerLayoutGuide type="bottom" id="9tB-4J-Cv9"/>
@@ -99,13 +98,13 @@
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-u1-WaS">
                                 <rect key="frame" x="61" y="183" width="198" height="201"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kf0-J8-ezk">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="Kf0-J8-ezk">
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMQ-zn-7Bd">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lwd-Cz-gMP">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="lwd-Cz-gMP">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -154,7 +153,7 @@
         <!--MOHUD-->
         <scene sceneID="Hc2-Lq-zBN">
             <objects>
-                <viewController storyboardIdentifier="success" modalPresentationStyle="overCurrentContext" id="QMi-Dg-4eU" customClass="MOHUD" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="success" modalPresentationStyle="overCurrentContext" id="QMi-Dg-4eU" customClass="MOHUD" customModule="MOHUDDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TTx-ce-ldg"/>
                         <viewControllerLayoutGuide type="bottom" id="bdJ-nS-j0q"/>
@@ -169,12 +168,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dKX-VU-DWo">
-                                            <rect key="frame" x="8" y="102" width="182" height="91"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npz-iU-Jo2">
                                             <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HQx-ij-57j">
@@ -187,9 +180,19 @@
                                                             <constraint firstAttribute="height" constant="50" id="bbc-KB-CEm"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dKX-VU-DWo">
+                                                        <rect key="frame" x="8" y="102" width="182" height="91"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="dKX-VU-DWo" firstAttribute="leading" secondItem="HQx-ij-57j" secondAttribute="leading" constant="8" id="1wh-mC-LC6"/>
+                                                    <constraint firstItem="dKX-VU-DWo" firstAttribute="top" secondItem="p2R-O0-VWR" secondAttribute="bottom" constant="10" id="7G1-eq-qem"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dKX-VU-DWo" secondAttribute="bottom" constant="8" id="ZjC-cP-nEt"/>
                                                     <constraint firstItem="p2R-O0-VWR" firstAttribute="top" secondItem="HQx-ij-57j" secondAttribute="top" constant="42" id="lcO-n8-w2B"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dKX-VU-DWo" secondAttribute="trailing" constant="8" id="muc-rP-4xR"/>
                                                     <constraint firstAttribute="trailing" secondItem="p2R-O0-VWR" secondAttribute="trailing" constant="60" id="u7T-Cx-k2k"/>
                                                     <constraint firstItem="p2R-O0-VWR" firstAttribute="leading" secondItem="HQx-ij-57j" secondAttribute="leading" constant="61" id="yJn-v2-6uQ"/>
                                                 </constraints>
@@ -201,13 +204,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="npz-iU-Jo2" firstAttribute="leading" secondItem="DJC-rP-2cW" secondAttribute="leading" id="CYQ-4E-LW9"/>
-                                        <constraint firstAttribute="bottom" secondItem="dKX-VU-DWo" secondAttribute="bottom" constant="8" id="Mmo-nj-9Rc"/>
                                         <constraint firstAttribute="trailing" secondItem="npz-iU-Jo2" secondAttribute="trailing" id="WZe-ax-vEa"/>
                                         <constraint firstAttribute="bottom" secondItem="npz-iU-Jo2" secondAttribute="bottom" id="XhE-kT-aq5"/>
-                                        <constraint firstItem="dKX-VU-DWo" firstAttribute="top" secondItem="p2R-O0-VWR" secondAttribute="bottom" constant="10" id="cPP-cj-vP6"/>
-                                        <constraint firstAttribute="trailing" secondItem="dKX-VU-DWo" secondAttribute="trailing" constant="8" id="lPc-jd-Tsd"/>
                                         <constraint firstItem="npz-iU-Jo2" firstAttribute="top" secondItem="DJC-rP-2cW" secondAttribute="top" id="p50-xa-SFw"/>
-                                        <constraint firstItem="dKX-VU-DWo" firstAttribute="leading" secondItem="DJC-rP-2cW" secondAttribute="leading" constant="8" id="sIQ-oW-vH9"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -248,7 +247,7 @@
         <!--MOHUD-->
         <scene sceneID="JeO-5V-2iO">
             <objects>
-                <viewController storyboardIdentifier="failure" modalPresentationStyle="overCurrentContext" id="cij-Ui-Bep" customClass="MOHUD" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="failure" modalPresentationStyle="overCurrentContext" id="cij-Ui-Bep" customClass="MOHUD" customModule="MOHUDDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uer-se-agj"/>
                         <viewControllerLayoutGuide type="bottom" id="09l-uH-eg1"/>
@@ -327,9 +326,4 @@
         <image name="checkmark" width="94" height="61"/>
         <image name="cross" width="62" height="62"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

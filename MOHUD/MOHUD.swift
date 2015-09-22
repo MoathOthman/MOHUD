@@ -14,19 +14,16 @@ import UIKit
     @IBOutlet weak var loaderContainer: UIVisualEffectView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-
+    //MARK: variables
     var statusString: String = ""
     var failureString:String = ""
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
     override func viewWillAppear(animated: Bool) {
         if MOHUD.me != nil {
             self.commonSetup(MOHUD.me!)
         }
     }
+    //MARK: Construct
     class func ME(_me:MOHUD?) -> MOHUD?{
         dismiss() // if any there dismiss it
         me = _me
@@ -52,41 +49,55 @@ import UIKit
         ME(self.make(.failure) as? MOHUD)
     }
 
+    //MARK: Fail
     class func showWithError(errorString:String) {
         MakeFailureHUD()
         MOHUD.me?.failureString = errorString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: 2)
     }
-    class func showWithError(errorString:String, delay: NSTimeInterval) {
+    class func showWithError(errorString:String, period: NSTimeInterval) {
         MakeFailureHUD()
         MOHUD.me?.failureString = errorString
         MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: delay)
+        MOHUD.me?.hide(afterDelay: period)
     }
-
+    //MARK: Success
     class func showSuccess(successString: String) {
         MakeSuccessHUD()
         MOHUD.me?.statusString = successString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: 2)
     }
-    class func showSuccess(successString: String, delay: NSTimeInterval) {
+    class func showSuccess(successString: String, period: NSTimeInterval) {
         MakeSuccessHUD()
         MOHUD.me?.statusString = successString
         MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: delay)
+        MOHUD.me?.hide(afterDelay: period)
     }
+    //MARK: Default show
     class func show() {
         MakeProgressHUD()
         MOHUD.me?.show()
     }
+    class func show(periodOfTime period: NSTimeInterval) {
+        MakeProgressHUD()
+        MOHUD.me?.show()
+        MOHUD.me?.hide(afterDelay: period)
+    }
+
     class func show(status: String) {
         MakeProgressHUD()
         MOHUD.me?.statusString = status
         MOHUD.me?.show()
-
     }
+    class func show(status: String, period: NSTimeInterval) {
+        MakeProgressHUD()
+        MOHUD.me?.statusString = status
+        MOHUD.me?.show()
+        MOHUD.me?.hide(afterDelay: period)
+    }
+    //MARK: Show/hide and timer
     private func show() {
         MOHUD.me?.view.alpha = 0;
         //NOTE: Keywindow should be shown first 
@@ -100,9 +111,6 @@ import UIKit
         }
     }
 
-    private func show(status: String) {
-
-    }
     class func dismiss() {
         if let _me = me {
             UIView.animateWithDuration(0.45, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
@@ -125,6 +133,7 @@ import UIKit
 }
 
 
+//MARK: Scenses organizing
 struct MOStoryBoardID {
     static let progress = "Default"
     static let subtitle = "subtitle"

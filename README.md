@@ -4,8 +4,9 @@ A simple HUD to indicate activity, success, and failure.
 
 #Description
 MOHUD is a smilpe HUD written in swift using storyboard for its Views.
+#Demo
+[![Demo Doccou alpha](https://j.gifs.com/y580lQ.gif)](https://youtu.be/02KHdUj7AMA)
 
-<iframe src="http://gifs.com/embed/y580lQ" frameborder="0" scrolling="no" width='152' height='270' style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
 
 #Installation
 Just Drag-drop the MOHUD folder into your project.

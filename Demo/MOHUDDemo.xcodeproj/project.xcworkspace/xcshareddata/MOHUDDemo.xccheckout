@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>30C2E251-D969-469F-AC76-01D30958DD81</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MOHUDDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4540DF306D5AE982A6DAD49EAC4C094AFC8841F9</key>
+		<string>https://github.com/MoathOthman/MOHUD.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Demo/MOHUDDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4540DF306D5AE982A6DAD49EAC4C094AFC8841F9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MoathOthman/MOHUD.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4540DF306D5AE982A6DAD49EAC4C094AFC8841F9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4540DF306D5AE982A6DAD49EAC4C094AFC8841F9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MOHUD</string>
+		</dict>
+	</array>
+</dict>
+</plist>

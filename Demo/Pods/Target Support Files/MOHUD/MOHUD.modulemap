@@ -1,0 +1,6 @@
+framework module MOHUD {
+  umbrella header "MOHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}

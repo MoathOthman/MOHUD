@@ -19,7 +19,7 @@ public class MOHUD: UIViewController {
     var statusString: String = ""
     var failureString: String = ""
     var titleString: String = ""
-    
+
     override public func viewWillAppear(animated: Bool) {
         if MOHUD.me != nil {
             self.commonSetup(MOHUD.me!)
@@ -37,10 +37,10 @@ public class MOHUD: UIViewController {
     }//0x7ff102d7e410
     //MARK: Factory
     class func MakeProgressHUD() {
-        ME(self.make(.progress) as? MOHUD)
+         ME(self.make(.progress) as? MOHUD)
     }
     class func MakeSuccessHUD() {
-        ME(self.make(.success) as? MOHUD)
+         ME(self.make(.success) as? MOHUD)
     }
     class func MakeFailureHUD() {
         ME(self.make(.failure) as? MOHUD)
@@ -48,7 +48,7 @@ public class MOHUD: UIViewController {
     class func MakeSubtitleHUD() {
         ME(self.make(.subtitle) as? MOHUD)
     }
-    // MARK: - Public
+     // MARK: - Public
     //MARK: Subtitle
     public class func showSubtitle(title title:String, subtitle:String) {
         MakeSubtitleHUD()
@@ -99,7 +99,7 @@ public class MOHUD: UIViewController {
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: period)
     }
-    
+
     public class func show(status: String) {
         MakeProgressHUD()
         MOHUD.me?.statusString = status
@@ -114,24 +114,24 @@ public class MOHUD: UIViewController {
     //MARK: Show/hide and timer
     private func show() {
         MOHUD.me?.view.alpha = 0;
-        //NOTE: Keywindow should be shown first
+        //NOTE: Keywindow should be shown first 
         if let keywindow = UIApplication.sharedApplication().keyWindow {
             keywindow.addSubview(self.view)
             UIView.animateWithDuration(1.55, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 MOHUD.me?.view.alpha = 1;
                 }) { (finished) -> Void in
-                    
+
             }
         }
     }
-    
+
     class func dismiss() {
         if let _me = me {
             UIView.animateWithDuration(0.45, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 _me.view.alpha = 0;
                 }) { (finished) -> Void in
                     _me.view.removeFromSuperview()
-                    
+
             }
         }
     }
@@ -140,7 +140,7 @@ public class MOHUD: UIViewController {
         hideTimer?.invalidate()
         hideTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self.classForCoder, selector: Selector("dismiss"), userInfo: nil, repeats: false)
     }
-    
+
     @IBAction private func hideHud(sender: AnyObject) {
         MOHUD.dismiss()
     }
@@ -185,7 +185,7 @@ extension MOHUD {
         }
         if let _sl = hud.statusLabel {
             if self.statusString != "" {
-                _sl.text = self.statusString
+            _sl.text = self.statusString
             }
         }
         if let _tL = hud.titleLabel {

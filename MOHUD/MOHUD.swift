@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc class MOHUD: UIViewController {
+public class MOHUD: UIViewController {
     static var me:MOHUD?
     //MARK: Outlets
     @IBOutlet weak var loaderContainer: UIVisualEffectView!
@@ -20,7 +20,7 @@ import UIKit
     var failureString: String = ""
     var titleString: String = ""
 
-    override func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(animated: Bool) {
         if MOHUD.me != nil {
             self.commonSetup(MOHUD.me!)
         }
@@ -48,14 +48,15 @@ import UIKit
     class func MakeSubtitleHUD() {
         ME(self.make(.subtitle) as? MOHUD)
     }
+     // MARK: - Public
     //MARK: Subtitle
-    class func showSubtitle(title title:String, subtitle:String) {
+    public class func showSubtitle(title title:String, subtitle:String) {
         MakeSubtitleHUD()
         MOHUD.me?.statusString = subtitle
         MOHUD.me?.titleString = title
         MOHUD.me?.show()
     }
-    class func showSubtitle(title title:String, subtitle:String, period: NSTimeInterval) {
+    public class func showSubtitle(title title:String, subtitle:String, period: NSTimeInterval) {
         MakeSubtitleHUD()
         MOHUD.me?.statusString = subtitle
         MOHUD.me?.titleString = title
@@ -63,48 +64,48 @@ import UIKit
         MOHUD.me?.hide(afterDelay: period)
     }
     //MARK: Fail
-    class func showWithError(errorString:String) {
+    public class func showWithError(errorString:String) {
         MakeFailureHUD()
         MOHUD.me?.failureString = errorString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: 2)
     }
-    class func showWithError(errorString:String, period: NSTimeInterval) {
+    public class func showWithError(errorString:String, period: NSTimeInterval) {
         MakeFailureHUD()
         MOHUD.me?.failureString = errorString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: period)
     }
     //MARK: Success
-    class func showSuccess(successString: String) {
+    public class func showSuccess(successString: String) {
         MakeSuccessHUD()
         MOHUD.me?.statusString = successString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: 2)
     }
-    class func showSuccess(successString: String, period: NSTimeInterval) {
+    public class func showSuccess(successString: String, period: NSTimeInterval) {
         MakeSuccessHUD()
         MOHUD.me?.statusString = successString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: period)
     }
     //MARK: Default show
-    class func show() {
+    public class func show() {
         MakeProgressHUD()
         MOHUD.me?.show()
     }
-    class func show(periodOfTime period: NSTimeInterval) {
+    public class func show(periodOfTime period: NSTimeInterval) {
         MakeProgressHUD()
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: period)
     }
 
-    class func show(status: String) {
+    public class func show(status: String) {
         MakeProgressHUD()
         MOHUD.me?.statusString = status
         MOHUD.me?.show()
     }
-    class func show(status: String, period: NSTimeInterval) {
+    public class func show(status: String, period: NSTimeInterval) {
         MakeProgressHUD()
         MOHUD.me?.statusString = status
         MOHUD.me?.show()
@@ -160,7 +161,7 @@ enum MOSceneType {
 
 extension MOHUD {
     class func make(type : MOSceneType) -> AnyObject {
-        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "MOHUD", bundle: nil)
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "MOHUD", bundle: NSBundle(forClass: MOHUD.self))
         switch type {
         case .progress:
             return mainStoryBoard.instantiateViewControllerWithIdentifier(MOStoryBoardID.progress)

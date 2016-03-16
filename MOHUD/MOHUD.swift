@@ -19,7 +19,7 @@ public class MOHUD: UIViewController {
     var statusString: String = ""
     var failureString: String = ""
     var titleString: String = ""
-    
+
     override public func viewWillAppear(animated: Bool) {
         if MOHUD.me != nil {
             self.commonSetup(MOHUD.me!)
@@ -49,7 +49,7 @@ public class MOHUD: UIViewController {
         ME(self.make(.subtitle) as? MOHUD)
     }
     // MARK: - Public
-    //MARK: Subtitle
+    // MARK: Subtitle
     public class func showSubtitle(title title:String, subtitle:String) {
         MakeSubtitleHUD()
         MOHUD.me?.statusString = subtitle
@@ -99,7 +99,7 @@ public class MOHUD: UIViewController {
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: period)
     }
-    
+
     public class func show(status: String) {
         MakeProgressHUD()
         MOHUD.me?.statusString = status

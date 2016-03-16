@@ -9,7 +9,10 @@ MOHUD is a smilpe HUD written in swift using storyboard for its Views.
 
 
 #Installation
+##MANUAL
 Just Drag-drop the MOHUD folder into your project.
+##CocoaPods
+`pod 'MOHUD' `
 #How to Use
 For Showing the HUD 
 

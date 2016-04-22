@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		958E596140E86A8D3F6383F8 /* Pods_MOHUDDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2604FEAACA5BCD8F85864F /* Pods_MOHUDDemo.framework */; };
 		ECA66FD21BB0318900159D98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA66FD11BB0318900159D98 /* AppDelegate.swift */; };
 		ECA66FD41BB0318900159D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA66FD31BB0318900159D98 /* ViewController.swift */; };
 		ECA66FD71BB0318900159D98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA66FD51BB0318900159D98 /* Main.storyboard */; };
@@ -15,6 +14,9 @@
 		ECA66FDC1BB0318900159D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA66FDA1BB0318900159D98 /* LaunchScreen.storyboard */; };
 		ECA66FE71BB0318900159D98 /* MOHUDDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA66FE61BB0318900159D98 /* MOHUDDemoTests.swift */; };
 		ECA66FF21BB0318900159D98 /* MOHUDDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA66FF11BB0318900159D98 /* MOHUDDemoUITests.swift */; };
+		ECB9F1EE1CCAD905004C8B2A /* MOHUD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB9F1EB1CCAD905004C8B2A /* MOHUD.storyboard */; };
+		ECB9F1EF1CCAD905004C8B2A /* MOHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB9F1EC1CCAD905004C8B2A /* MOHUD.swift */; };
+		ECB9F1F01CCAD905004C8B2A /* MOHUD.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB9F1ED1CCAD905004C8B2A /* MOHUD.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A6AD4108A199C22003C1BD3 /* Pods-MOHUDDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOHUDDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MOHUDDemo/Pods-MOHUDDemo.release.xcconfig"; sourceTree = "<group>"; };
-		3BF42A3DB34B086355027312 /* Pods-MOHUDDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOHUDDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MOHUDDemo/Pods-MOHUDDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		CF2604FEAACA5BCD8F85864F /* Pods_MOHUDDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOHUDDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA66FCE1BB0318900159D98 /* MOHUDDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOHUDDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA66FD11BB0318900159D98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECA66FD31BB0318900159D98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +50,9 @@
 		ECA66FED1BB0318900159D98 /* MOHUDDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOHUDDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA66FF11BB0318900159D98 /* MOHUDDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOHUDDemoUITests.swift; sourceTree = "<group>"; };
 		ECA66FF31BB0318900159D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECB9F1EB1CCAD905004C8B2A /* MOHUD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MOHUD.storyboard; sourceTree = "<group>"; };
+		ECB9F1EC1CCAD905004C8B2A /* MOHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHUD.swift; sourceTree = "<group>"; };
+		ECB9F1ED1CCAD905004C8B2A /* MOHUD.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MOHUD.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958E596140E86A8D3F6383F8 /* Pods_MOHUDDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,19 +80,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		66C157BA8A60D4C37C9F2742 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3BF42A3DB34B086355027312 /* Pods-MOHUDDemo.debug.xcconfig */,
-				0A6AD4108A199C22003C1BD3 /* Pods-MOHUDDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		99F1B9ACFB87CA7014396FBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF2604FEAACA5BCD8F85864F /* Pods_MOHUDDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,7 +94,6 @@
 				ECA66FE51BB0318900159D98 /* MOHUDDemoTests */,
 				ECA66FF01BB0318900159D98 /* MOHUDDemoUITests */,
 				ECA66FCF1BB0318900159D98 /* Products */,
-				66C157BA8A60D4C37C9F2742 /* Pods */,
 				99F1B9ACFB87CA7014396FBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +111,7 @@
 		ECA66FD01BB0318900159D98 /* MOHUDDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ECB9F1EA1CCAD905004C8B2A /* MOHUD */,
 				ECA66FD11BB0318900159D98 /* AppDelegate.swift */,
 				ECA66FD31BB0318900159D98 /* ViewController.swift */,
 				ECA66FD51BB0318900159D98 /* Main.storyboard */,
@@ -149,6 +140,17 @@
 			path = MOHUDDemoUITests;
 			sourceTree = "<group>";
 		};
+		ECB9F1EA1CCAD905004C8B2A /* MOHUD */ = {
+			isa = PBXGroup;
+			children = (
+				ECB9F1EB1CCAD905004C8B2A /* MOHUD.storyboard */,
+				ECB9F1EC1CCAD905004C8B2A /* MOHUD.swift */,
+				ECB9F1ED1CCAD905004C8B2A /* MOHUD.xcassets */,
+			);
+			name = MOHUD;
+			path = ../../MOHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,12 +158,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECA66FF61BB0318900159D98 /* Build configuration list for PBXNativeTarget "MOHUDDemo" */;
 			buildPhases = (
-				071D321FBA2C13294A91286C /* Check Pods Manifest.lock */,
 				ECA66FCA1BB0318900159D98 /* Sources */,
 				ECA66FCB1BB0318900159D98 /* Frameworks */,
 				ECA66FCC1BB0318900159D98 /* Resources */,
-				5941CCCB209CA1F82B71F597 /* Embed Pods Frameworks */,
-				5F3F7B2578C40678113FA4DB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,6 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB9F1F01CCAD905004C8B2A /* MOHUD.xcassets in Resources */,
+				ECB9F1EE1CCAD905004C8B2A /* MOHUD.storyboard in Resources */,
 				ECA66FDC1BB0318900159D98 /* LaunchScreen.storyboard in Resources */,
 				ECA66FD91BB0318900159D98 /* Assets.xcassets in Resources */,
 				ECA66FD71BB0318900159D98 /* Main.storyboard in Resources */,
@@ -277,59 +278,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		071D321FBA2C13294A91286C /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5941CCCB209CA1F82B71F597 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MOHUDDemo/Pods-MOHUDDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F3F7B2578C40678113FA4DB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MOHUDDemo/Pods-MOHUDDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		ECA66FCA1BB0318900159D98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB9F1EF1CCAD905004C8B2A /* MOHUD.swift in Sources */,
 				ECA66FD41BB0318900159D98 /* ViewController.swift in Sources */,
 				ECA66FD21BB0318900159D98 /* AppDelegate.swift in Sources */,
 			);
@@ -469,7 +423,6 @@
 		};
 		ECA66FF71BB0318900159D98 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BF42A3DB34B086355027312 /* Pods-MOHUDDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MOHUDDemo/Info.plist;
@@ -482,7 +435,6 @@
 		};
 		ECA66FF81BB0318900159D98 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A6AD4108A199C22003C1BD3 /* Pods-MOHUDDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MOHUDDemo/Info.plist;

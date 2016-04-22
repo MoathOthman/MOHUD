@@ -138,7 +138,7 @@ public class MOHUD: UIViewController {
     private var hideTimer: NSTimer?
     private func hide(afterDelay delay: NSTimeInterval) {
         hideTimer?.invalidate()
-        hideTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self.classForCoder, selector: Selector("dismiss"), userInfo: nil, repeats: false)
+        hideTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self.classForCoder, selector: #selector(MOHUD.dismiss), userInfo: nil, repeats: false)
     }
     
     @IBAction private func hideHud(sender: AnyObject) {

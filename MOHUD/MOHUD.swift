@@ -125,7 +125,7 @@ public class MOHUD: UIViewController {
         }
     }
     
-    class func dismiss() {
+    public class func dismiss() {
         if let _me = me {
             UIView.animateWithDuration(0.45, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 _me.view.alpha = 0;

@@ -70,10 +70,67 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUj-QQ-zYQ">
+                                <rect key="frame" x="-4" y="459" width="328" height="109"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9A0-Ep-CxV">
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="109"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYO-ek-kPN">
+                                            <rect key="frame" x="0.0" y="0.5" width="328" height="109"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YyQ-ES-udL">
+                                                <rect key="frame" x="0.0" y="0.0" width="328" height="109"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="GTy-iA-hpH"/>
+                                    <constraint firstItem="NYO-ek-kPN" firstAttribute="centerX" secondItem="AUj-QQ-zYQ" secondAttribute="centerX" id="PLd-22-5Ui"/>
+                                    <constraint firstItem="NYO-ek-kPN" firstAttribute="centerY" secondItem="AUj-QQ-zYQ" secondAttribute="centerY" id="RSv-GP-cmN"/>
+                                    <constraint firstItem="NYO-ek-kPN" firstAttribute="height" secondItem="AUj-QQ-zYQ" secondAttribute="height" id="Yfu-MK-xgc"/>
+                                    <constraint firstItem="NYO-ek-kPN" firstAttribute="width" secondItem="AUj-QQ-zYQ" secondAttribute="width" id="eof-hL-oxp"/>
+                                    <constraint firstAttribute="width" constant="328" id="uhR-Gk-gaj"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPl-xV-LAA">
+                                <rect key="frame" x="79" y="521" width="162" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="N9l-39-w6o"/>
+                                    <constraint firstAttribute="width" constant="162" id="e2M-ZG-bTp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xo-uz-0dY">
+                                <rect key="frame" x="79" y="479" width="162" height="39"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="WPl-xV-LAA" firstAttribute="top" secondItem="8xo-uz-0dY" secondAttribute="bottom" constant="3" id="4yg-BS-xto"/>
+                            <constraint firstItem="AUj-QQ-zYQ" firstAttribute="centerX" secondItem="5ZU-OQ-DqO" secondAttribute="centerX" id="6wU-kK-Vzs"/>
+                            <constraint firstItem="8xo-uz-0dY" firstAttribute="height" secondItem="WPl-xV-LAA" secondAttribute="height" id="EsT-0o-YNx"/>
+                            <constraint firstItem="Rcg-np-KFx" firstAttribute="top" secondItem="AUj-QQ-zYQ" secondAttribute="bottom" id="GZj-FN-h78"/>
                             <constraint firstAttribute="centerX" secondItem="aRO-VP-6Qo" secondAttribute="centerX" id="PEe-7C-5QV"/>
+                            <constraint firstItem="Rcg-np-KFx" firstAttribute="top" secondItem="WPl-xV-LAA" secondAttribute="bottom" constant="8" id="Tce-AS-Bee"/>
                             <constraint firstAttribute="centerY" secondItem="aRO-VP-6Qo" secondAttribute="centerY" id="YLY-J9-CNG"/>
+                            <constraint firstItem="8xo-uz-0dY" firstAttribute="centerX" secondItem="WPl-xV-LAA" secondAttribute="centerX" id="vQd-CU-pUU"/>
+                            <constraint firstItem="8xo-uz-0dY" firstAttribute="width" secondItem="WPl-xV-LAA" secondAttribute="width" id="wgG-Hl-JP6"/>
+                            <constraint firstItem="WPl-xV-LAA" firstAttribute="centerX" secondItem="5ZU-OQ-DqO" secondAttribute="centerX" id="y2s-qo-IlL"/>
                         </constraints>
                     </view>
                     <connections>

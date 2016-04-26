@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--MOHUD-->
@@ -23,40 +24,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbO-G7-I59">
-                                            <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nVt-dz-U49">
-                                                <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="G81-hy-kF8">
-                                                        <rect key="frame" x="81" y="82" width="37" height="37"/>
-                                                        <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </activityIndicatorView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="centerX" secondItem="G81-hy-kF8" secondAttribute="centerX" id="1b2-Kk-Uxs"/>
-                                                    <constraint firstAttribute="centerY" secondItem="G81-hy-kF8" secondAttribute="centerY" id="cXv-cP-RBo"/>
-                                                </constraints>
-                                            </view>
-                                            <blurEffect style="light"/>
-                                        </visualEffectView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iq9-LM-yUG">
                                             <rect key="frame" x="8" y="129" width="182" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="64" id="RVi-4S-v5a"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="iq9-LM-yUG" secondAttribute="bottom" constant="8" id="4FX-sM-yxd"/>
-                                        <constraint firstAttribute="bottom" secondItem="pbO-G7-I59" secondAttribute="bottom" id="BHF-I8-y9v"/>
-                                        <constraint firstAttribute="trailing" secondItem="iq9-LM-yUG" secondAttribute="trailing" constant="8" id="CdI-wQ-zOh"/>
-                                        <constraint firstItem="iq9-LM-yUG" firstAttribute="leading" secondItem="NYK-Ly-gN0" secondAttribute="leading" constant="8" id="Dnc-3h-XND"/>
-                                        <constraint firstItem="pbO-G7-I59" firstAttribute="leading" secondItem="NYK-Ly-gN0" secondAttribute="leading" id="SDi-Yl-KDR"/>
-                                        <constraint firstAttribute="trailing" secondItem="pbO-G7-I59" secondAttribute="trailing" id="xti-UZ-TG0"/>
-                                        <constraint firstItem="pbO-G7-I59" firstAttribute="top" secondItem="NYK-Ly-gN0" secondAttribute="top" id="y7o-bb-6qW"/>
-                                        <constraint firstItem="iq9-LM-yUG" firstAttribute="top" secondItem="NYK-Ly-gN0" secondAttribute="top" constant="129" id="yUt-yb-jGZ"/>
+                                        <constraint firstItem="iq9-LM-yUG" firstAttribute="leading" secondItem="NYK-Ly-gN0" secondAttribute="leading" constant="8" id="A8D-rP-UEe"/>
+                                        <constraint firstAttribute="bottom" secondItem="iq9-LM-yUG" secondAttribute="bottom" constant="8" id="ay3-ff-pMs"/>
+                                        <constraint firstAttribute="trailing" secondItem="iq9-LM-yUG" secondAttribute="trailing" constant="8" id="b6R-ka-tQQ"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -70,70 +51,73 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUj-QQ-zYQ">
-                                <rect key="frame" x="-4" y="459" width="328" height="109"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9A0-Ep-CxV">
-                                    <rect key="frame" x="0.0" y="0.0" width="328" height="109"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYO-ek-kPN">
-                                            <rect key="frame" x="0.0" y="0.5" width="328" height="109"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YyQ-ES-udL">
-                                                <rect key="frame" x="0.0" y="0.0" width="328" height="109"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </view>
-                                            <blurEffect style="light"/>
-                                        </visualEffectView>
-                                    </subviews>
-                                </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="G81-hy-kF8">
+                                <rect key="frame" x="141" y="266" width="37" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="109" id="GTy-iA-hpH"/>
-                                    <constraint firstItem="NYO-ek-kPN" firstAttribute="centerX" secondItem="AUj-QQ-zYQ" secondAttribute="centerX" id="PLd-22-5Ui"/>
-                                    <constraint firstItem="NYO-ek-kPN" firstAttribute="centerY" secondItem="AUj-QQ-zYQ" secondAttribute="centerY" id="RSv-GP-cmN"/>
-                                    <constraint firstItem="NYO-ek-kPN" firstAttribute="height" secondItem="AUj-QQ-zYQ" secondAttribute="height" id="Yfu-MK-xgc"/>
-                                    <constraint firstItem="NYO-ek-kPN" firstAttribute="width" secondItem="AUj-QQ-zYQ" secondAttribute="width" id="eof-hL-oxp"/>
-                                    <constraint firstAttribute="width" constant="328" id="uhR-Gk-gaj"/>
+                                    <constraint firstAttribute="width" constant="37" id="LJm-dV-5bp"/>
+                                    <constraint firstAttribute="height" constant="37" id="Qg8-Ek-V55"/>
                                 </constraints>
-                                <blurEffect style="light"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1d2-lY-KzO" userLabel="ButtonsContainer">
+                                <rect key="frame" x="61" y="468" width="198" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPl-xV-LAA">
+                                        <rect key="frame" x="0.0" y="53" width="198" height="53"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelProcess:" destination="vna-RR-cwu" eventType="touchUpInside" id="alh-lb-yna"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xo-uz-0dY">
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="53"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continueWithoutCancelling:" destination="vna-RR-cwu" eventType="touchUpInside" id="J0l-l4-Kvl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="WPl-xV-LAA" firstAttribute="height" secondItem="1d2-lY-KzO" secondAttribute="height" multiplier="0.5" id="1Ga-h7-8Xa"/>
+                                    <constraint firstItem="8xo-uz-0dY" firstAttribute="top" secondItem="1d2-lY-KzO" secondAttribute="top" id="6UN-j8-ahr"/>
+                                    <constraint firstAttribute="bottom" secondItem="WPl-xV-LAA" secondAttribute="bottom" id="CPC-23-XgW"/>
+                                    <constraint firstItem="8xo-uz-0dY" firstAttribute="leading" secondItem="1d2-lY-KzO" secondAttribute="leading" id="IKY-2L-2AZ"/>
+                                    <constraint firstItem="WPl-xV-LAA" firstAttribute="top" secondItem="8xo-uz-0dY" secondAttribute="bottom" id="Nhe-ba-De4"/>
+                                    <constraint firstAttribute="trailing" secondItem="WPl-xV-LAA" secondAttribute="trailing" id="Ue8-I6-1QW"/>
+                                    <constraint firstAttribute="height" priority="999" constant="106" id="aS2-rs-YTe"/>
+                                    <constraint firstAttribute="trailing" secondItem="8xo-uz-0dY" secondAttribute="trailing" id="dKL-KL-hxz"/>
+                                    <constraint firstItem="WPl-xV-LAA" firstAttribute="leading" secondItem="1d2-lY-KzO" secondAttribute="leading" id="f8c-Ib-SYd"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPl-xV-LAA">
-                                <rect key="frame" x="79" y="521" width="162" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="N9l-39-w6o"/>
-                                    <constraint firstAttribute="width" constant="162" id="e2M-ZG-bTp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xo-uz-0dY">
-                                <rect key="frame" x="79" y="479" width="162" height="39"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="WPl-xV-LAA" firstAttribute="top" secondItem="8xo-uz-0dY" secondAttribute="bottom" constant="3" id="4yg-BS-xto"/>
-                            <constraint firstItem="AUj-QQ-zYQ" firstAttribute="centerX" secondItem="5ZU-OQ-DqO" secondAttribute="centerX" id="6wU-kK-Vzs"/>
-                            <constraint firstItem="8xo-uz-0dY" firstAttribute="height" secondItem="WPl-xV-LAA" secondAttribute="height" id="EsT-0o-YNx"/>
-                            <constraint firstItem="Rcg-np-KFx" firstAttribute="top" secondItem="AUj-QQ-zYQ" secondAttribute="bottom" id="GZj-FN-h78"/>
+                            <constraint firstItem="G81-hy-kF8" firstAttribute="centerX" secondItem="5ZU-OQ-DqO" secondAttribute="centerX" id="FMR-hZ-ylw"/>
+                            <constraint firstItem="Rcg-np-KFx" firstAttribute="top" secondItem="1d2-lY-KzO" secondAttribute="bottom" constant="-6" id="I4P-0I-5Ae"/>
                             <constraint firstAttribute="centerX" secondItem="aRO-VP-6Qo" secondAttribute="centerX" id="PEe-7C-5QV"/>
-                            <constraint firstItem="Rcg-np-KFx" firstAttribute="top" secondItem="WPl-xV-LAA" secondAttribute="bottom" constant="8" id="Tce-AS-Bee"/>
                             <constraint firstAttribute="centerY" secondItem="aRO-VP-6Qo" secondAttribute="centerY" id="YLY-J9-CNG"/>
-                            <constraint firstItem="8xo-uz-0dY" firstAttribute="centerX" secondItem="WPl-xV-LAA" secondAttribute="centerX" id="vQd-CU-pUU"/>
-                            <constraint firstItem="8xo-uz-0dY" firstAttribute="width" secondItem="WPl-xV-LAA" secondAttribute="width" id="wgG-Hl-JP6"/>
-                            <constraint firstItem="WPl-xV-LAA" firstAttribute="centerX" secondItem="5ZU-OQ-DqO" secondAttribute="centerX" id="y2s-qo-IlL"/>
+                            <constraint firstItem="G81-hy-kF8" firstAttribute="centerY" secondItem="5ZU-OQ-DqO" secondAttribute="centerY" id="fvb-Hr-aI9"/>
+                            <constraint firstItem="1d2-lY-KzO" firstAttribute="centerX" secondItem="5ZU-OQ-DqO" secondAttribute="centerX" id="hOk-8d-mvu"/>
+                            <constraint firstItem="1d2-lY-KzO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aRO-VP-6Qo" secondAttribute="bottom" constant="5" id="ifb-7n-EFo"/>
+                            <constraint firstItem="1d2-lY-KzO" firstAttribute="width" secondItem="aRO-VP-6Qo" secondAttribute="width" id="qCp-FQ-rue"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="G81-hy-kF8" id="y5A-d2-Y3Y"/>
+                        <outlet property="buttonsContainer" destination="1d2-lY-KzO" id="hNp-43-x98"/>
+                        <outlet property="cancelButton" destination="WPl-xV-LAA" id="uYY-yV-lLH"/>
+                        <outlet property="continueButton" destination="8xo-uz-0dY" id="fXk-2h-sbf"/>
                         <outlet property="loaderContainer" destination="aRO-VP-6Qo" id="FhV-lL-Bo0"/>
                         <outlet property="statusLabel" destination="iq9-LM-yUG" id="fNY-bK-JOV"/>
                     </connections>

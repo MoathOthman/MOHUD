@@ -24,11 +24,28 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showDefault(sender: AnyObject) {
-        MOHUD.show(periodOfTime:2)
+        MOHUD.show(periodOfTime: 2)
+        MOHUD.setBlurStyle(.Light)
+        MOHUD.onCancel = {
+            debugPrint("User Canceled")
+        }
+        MOHUD.onContinoue = {
+            debugPrint("User want to contniue without the progress indicator ")
+        }
     }
-
+    @IBAction func showWithCancelAndContinue(sender: AnyObject) {
+        MOHUD.show(periodOfTime: 10, withCancelAndContinue: true)
+        MOHUD.setBlurStyle(.Dark)
+        MOHUD.onCancel = {
+            debugPrint("User Canceled")
+        }
+        MOHUD.onContinoue = {
+            debugPrint("User want to contniue without the progress indicator ")
+        }
+    }
     @IBAction func showWithStatus(sender: AnyObject) {
-        MOHUD.show("Processing", period: 2)
+        MOHUD.showWithStatus("Processing", period: 2)
+        
     }
 
     @IBAction func showSuccess(sender: AnyObject) {

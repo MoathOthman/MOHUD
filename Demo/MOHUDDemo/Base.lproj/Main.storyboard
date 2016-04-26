@@ -100,11 +100,28 @@
                                             <action selector="showDefault:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4lY-tw-UdM"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7w-Nr-uyj">
+                                        <rect key="frame" x="122" y="478" width="357" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="aKH-Au-Orc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="25"/>
+                                        <state key="normal" title="Show with cancel and continue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showSubtitle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMg-ap-rPm"/>
+                                            <action selector="showWithCancelAndContinue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xWT-ny-sB0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="cVq-qW-q5I" firstAttribute="top" secondItem="3Jn-Xa-znF" secondAttribute="bottom" constant="22" id="039-qv-Njc"/>
                                     <constraint firstItem="ScS-EE-bjF" firstAttribute="leading" secondItem="Xlh-lI-I1B" secondAttribute="leading" id="2SA-f9-ETq"/>
                                     <constraint firstItem="3Jn-Xa-znF" firstAttribute="centerX" secondItem="RGH-e9-nB9" secondAttribute="centerX" id="6Cl-RF-KyV"/>
+                                    <constraint firstItem="w7w-Nr-uyj" firstAttribute="height" secondItem="ScS-EE-bjF" secondAttribute="height" id="Aip-w8-Ngl"/>
+                                    <constraint firstItem="w7w-Nr-uyj" firstAttribute="centerX" secondItem="ScS-EE-bjF" secondAttribute="centerX" id="BAL-nY-Me0"/>
+                                    <constraint firstItem="w7w-Nr-uyj" firstAttribute="top" secondItem="ScS-EE-bjF" secondAttribute="bottom" constant="14" id="EPx-0M-l5r"/>
                                     <constraint firstItem="ScS-EE-bjF" firstAttribute="trailing" secondItem="Xlh-lI-I1B" secondAttribute="trailing" id="EhA-aG-gKd"/>
                                     <constraint firstItem="Xlh-lI-I1B" firstAttribute="leading" secondItem="cVq-qW-q5I" secondAttribute="leading" id="JMU-gl-Aoy"/>
                                     <constraint firstItem="Xlh-lI-I1B" firstAttribute="trailing" secondItem="cVq-qW-q5I" secondAttribute="trailing" id="KSg-V5-y0e"/>
@@ -112,12 +129,13 @@
                                     <constraint firstItem="3Jn-Xa-znF" firstAttribute="top" secondItem="nCN-id-kQm" secondAttribute="bottom" constant="8" symbolic="YES" id="QQJ-eE-gLe"/>
                                     <constraint firstItem="nCN-id-kQm" firstAttribute="centerX" secondItem="cVq-qW-q5I" secondAttribute="centerX" id="Wy0-DQ-MWn"/>
                                     <constraint firstItem="nCN-id-kQm" firstAttribute="centerX" secondItem="j2T-SQ-s8x" secondAttribute="centerX" id="Xh5-tY-T9F"/>
+                                    <constraint firstAttribute="bottom" secondItem="w7w-Nr-uyj" secondAttribute="bottom" constant="59" id="XyT-FW-CuN"/>
                                     <constraint firstAttribute="trailing" secondItem="cVq-qW-q5I" secondAttribute="trailing" constant="173" id="Y6D-M8-zgY"/>
                                     <constraint firstItem="ScS-EE-bjF" firstAttribute="top" secondItem="RGH-e9-nB9" secondAttribute="bottom" constant="14" id="Z98-yv-ECr"/>
                                     <constraint firstItem="Xlh-lI-I1B" firstAttribute="top" secondItem="cVq-qW-q5I" secondAttribute="bottom" constant="8" symbolic="YES" id="Zbc-Mq-t5u"/>
                                     <constraint firstItem="RGH-e9-nB9" firstAttribute="top" secondItem="Xlh-lI-I1B" secondAttribute="bottom" constant="13" id="eIS-lt-RoS"/>
                                     <constraint firstItem="nCN-id-kQm" firstAttribute="top" secondItem="j2T-SQ-s8x" secondAttribute="top" constant="34" id="q2z-yv-ry1"/>
-                                    <constraint firstAttribute="bottom" secondItem="ScS-EE-bjF" secondAttribute="bottom" constant="136" id="rBi-CU-u4h"/>
+                                    <constraint firstItem="w7w-Nr-uyj" firstAttribute="width" secondItem="ScS-EE-bjF" secondAttribute="width" constant="105" id="w7j-dh-DtH"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

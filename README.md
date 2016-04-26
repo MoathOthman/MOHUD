@@ -47,13 +47,13 @@ Showing HUD with Cancel buttons
 
 ````
 MOHUD.show(periodOfTime: 10, withCancelAndContinue: true)
-        MOHUD.setBlurStyle(.Dark)
-        MOHUD.onCancel = {
-            debugPrint("User Canceled")
-        }
-        MOHUD.onContinoue = {
-            debugPrint("User want to contniue without the progress indicator ")
-        }
+MOHUD.setBlurStyle(.Dark)
+MOHUD.onCancel = {
+   debugPrint("User Canceled")
+}
+MOHUD.onContinoue = {
+   debugPrint("User want to contniue without the progress indicator ")
+}
 ````
 #license
 

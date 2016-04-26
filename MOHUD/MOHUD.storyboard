@@ -195,14 +195,63 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqt-5m-eID" userLabel="ButtonsContainer">
+                                <rect key="frame" x="61" y="468" width="198" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="equ-jU-e0i">
+                                        <rect key="frame" x="0.0" y="53" width="198" height="53"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelProcess:" destination="vna-RR-cwu" eventType="touchUpInside" id="nS8-xU-09n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxh-7e-55d">
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="53"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continueWithoutCancelling:" destination="vna-RR-cwu" eventType="touchUpInside" id="gNW-26-9gz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qxh-7e-55d" secondAttribute="trailing" id="8XH-VI-NBf"/>
+                                    <constraint firstItem="equ-jU-e0i" firstAttribute="leading" secondItem="aqt-5m-eID" secondAttribute="leading" id="EEJ-sc-lAO"/>
+                                    <constraint firstAttribute="bottom" secondItem="equ-jU-e0i" secondAttribute="bottom" id="JcP-qW-j9M"/>
+                                    <constraint firstItem="equ-jU-e0i" firstAttribute="top" secondItem="qxh-7e-55d" secondAttribute="bottom" id="Mbv-QP-gQm"/>
+                                    <constraint firstAttribute="height" priority="999" constant="106" id="drQ-1l-PCq"/>
+                                    <constraint firstAttribute="trailing" secondItem="equ-jU-e0i" secondAttribute="trailing" id="fbM-t0-YC3"/>
+                                    <constraint firstItem="qxh-7e-55d" firstAttribute="leading" secondItem="aqt-5m-eID" secondAttribute="leading" id="gBF-g0-zEw"/>
+                                    <constraint firstItem="equ-jU-e0i" firstAttribute="height" secondItem="aqt-5m-eID" secondAttribute="height" multiplier="0.5" id="kBH-JW-WZw"/>
+                                    <constraint firstItem="qxh-7e-55d" firstAttribute="top" secondItem="aqt-5m-eID" secondAttribute="top" id="mbK-MI-atZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aqt-5m-eID" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mz8-u1-WaS" secondAttribute="bottom" constant="5" id="6RW-4o-UHo"/>
+                            <constraint firstItem="aqt-5m-eID" firstAttribute="width" secondItem="mz8-u1-WaS" secondAttribute="width" id="CLH-gb-zUh"/>
+                            <constraint firstItem="aqt-5m-eID" firstAttribute="centerX" secondItem="mz8-u1-WaS" secondAttribute="centerX" id="CRJ-oQ-pgh"/>
+                            <constraint firstAttribute="bottom" secondItem="aqt-5m-eID" secondAttribute="bottom" constant="-6" id="PMX-ml-t45"/>
                             <constraint firstItem="mz8-u1-WaS" firstAttribute="centerY" secondItem="nyn-8u-IIG" secondAttribute="centerY" id="YKg-Jc-QUp"/>
                             <constraint firstItem="mz8-u1-WaS" firstAttribute="centerX" secondItem="nyn-8u-IIG" secondAttribute="centerX" id="pGQ-Ap-SOY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonsContainer" destination="aqt-5m-eID" id="KBy-iS-Dzk"/>
+                        <outlet property="cancelButton" destination="equ-jU-e0i" id="2YM-hP-HdL"/>
+                        <outlet property="continueButton" destination="qxh-7e-55d" id="A71-ui-DRg"/>
                         <outlet property="loaderContainer" destination="mz8-u1-WaS" id="mpe-4j-lkX"/>
                         <outlet property="statusLabel" destination="GTe-PT-7dA" id="Sox-w7-8TY"/>
                         <outlet property="titleLabel" destination="2Mm-XY-Dl5" id="4ED-DE-t8o"/>

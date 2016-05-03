@@ -1,5 +1,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/MoathOthman/MOHUD/badge.svg?branch=master)](https://coveralls.io/github/MoathOthman/MOHUD?branch=master)
 [![Build Status](https://travis-ci.org/MoathOthman/MOHUD.svg?branch=master)](https://travis-ci.org/MoathOthman/MOHUD)
+[![CocoaPods](https://img.shields.io/cocoapods/v/MOHUD.svg?maxAge=2592000?style=flat-square)]()
+[![CocoaPods](https://img.shields.io/cocoapods/l/MOHUD.svg?maxAge=2592000?style=plastic)]()
+[![CocoaPods](https://img.shields.io/cocoapods/p/MOHUD.svg?maxAge=2592000?style=plastic)]()
+[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/MOHUD.svg?maxAge=2592000?style=plastic)]()
 # MOHUD
 A simple HUD to indicate activity, success, and failure.
 

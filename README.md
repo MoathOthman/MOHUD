@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/MoathOthman/MOHUD/badge.svg?branch=master)](https://coveralls.io/github/MoathOthman/MOHUD?branch=master)
 # MOHUD
 A simple HUD to indicate activity, success, and failure.
 

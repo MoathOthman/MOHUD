@@ -1,4 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/MoathOthman/MOHUD/badge.svg?branch=master)](https://coveralls.io/github/MoathOthman/MOHUD?branch=master)
+[![Build Status](https://travis-ci.org/MoathOthman/MOHUD.svg?branch=master)](https://travis-ci.org/MoathOthman/MOHUD)
 # MOHUD
 A simple HUD to indicate activity, success, and failure.
 

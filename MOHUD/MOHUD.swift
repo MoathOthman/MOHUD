@@ -24,8 +24,8 @@ public class MOHUD: UIViewController {
     var failureString: String = ""
     var titleString: String = ""
     // Closures
-    static var onContinoue: (() -> Void)?
-    static var onCancel: (() -> Void)?
+    public static var onContinoue: (() -> Void)?
+    public static var onCancel: (() -> Void)?
     
     override public func viewWillAppear(animated: Bool) {
         if MOHUD.me != nil {

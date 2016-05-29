@@ -139,7 +139,7 @@ public class MOHUD: UIViewController {
         MOHUD.onCancel = .None
         MOHUD.onContinoue = .None
         //NOTE: Keywindow should be shown first
-        if let keywindow = UIApplication.sharedApplication().keyWindow {
+        if let keywindow = UIApplication.sharedApplication().windows.last {
             keywindow.addSubview(self.view)
             UIView.animateWithDuration(1.55, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 MOHUD.me?.view.alpha = 1;

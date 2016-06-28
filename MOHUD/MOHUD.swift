@@ -11,15 +11,27 @@ import UIKit
 public class MOHUD: UIViewController {
     static var me:MOHUD?
     //MARK: Outlets
-    @IBOutlet weak var loaderContainer: UIVisualEffectView!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var loaderContainer: UIVisualEffectView?
+    @IBOutlet weak var errorLabel: UILabel?
+    @IBOutlet weak var statusLabel: UILabel?
+    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
+    @IBOutlet weak var buttonsContainer: UIView?
+    @IBOutlet weak var continueButton: UIButton?
+    @IBOutlet weak var cancelButton: UIButton?
+    @IBOutlet weak var successLabcel: UILabel?
+    @IBOutlet weak var subTitleLabel: UILabel?
+    
     //MARK: variables
     var statusString: String = ""
     var failureString: String = ""
     var titleString: String = ""
-
+    // Closures
+    /// executed when user taps on Continue button
+    public static var onContinoue: (() -> Void)?
+    /// executed when user taps on Cancel button
+    public static var onCancel: (() -> Void)?
+    /// viewwillappear override
     override public func viewWillAppear(animated: Bool) {
         if MOHUD.me != nil {
             self.commonSetup(MOHUD.me!)
@@ -50,104 +62,140 @@ public class MOHUD: UIViewController {
     }
     // MARK: - Public
     // MARK: Subtitle
-    public class func showSubtitle(title title:String, subtitle:String) {
+    /// SHOW SUBTITLE HUD WITH TITLE AND SUBTITLE
+    public class func showSubtitle(title title:String, subtitle:String, withCancelAndContinue: Bool = false) {
         MakeSubtitleHUD()
         MOHUD.me?.statusString = subtitle
         MOHUD.me?.titleString = title
         MOHUD.me?.show()
-    }
-    public class func showSubtitle(title title:String, subtitle:String, period: NSTimeInterval) {
-        MakeSubtitleHUD()
-        MOHUD.me?.statusString = subtitle
-        MOHUD.me?.titleString = title
-        MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: period)
+        me?.buttonsContainer?.hidden = !withCancelAndContinue
     }
     //MARK: Fail
+    /// SHOW FAILURE HUD WITH MESSAGE
     public class func showWithError(errorString:String) {
         MakeFailureHUD()
         MOHUD.me?.failureString = errorString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: 2)
     }
-    public class func showWithError(errorString:String, period: NSTimeInterval) {
-        MakeFailureHUD()
-        MOHUD.me?.failureString = errorString
-        MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: period)
-    }
     //MARK: Success
+    /// SHOW SUCCESS HUD WITH MESSAGE
     public class func showSuccess(successString: String) {
         MakeSuccessHUD()
         MOHUD.me?.statusString = successString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: 2)
     }
-    public class func showSuccess(successString: String, period: NSTimeInterval) {
-        MakeSuccessHUD()
-        MOHUD.me?.statusString = successString
-        MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: period)
-    }
     //MARK: Default show
-    public class func show() {
+    /// SHOW THE DEFAUL HUD WITH LOADING MESSAGE
+    public class func show(withCancelAndContinue: Bool = false) {
         MakeProgressHUD()
         MOHUD.me?.show()
+        me?.buttonsContainer?.hidden = !withCancelAndContinue
     }
-    public class func show(periodOfTime period: NSTimeInterval) {
-        MakeProgressHUD()
-        MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: period)
-    }
-
-    public class func show(status: String) {
+    /// Show with Status
+    public class func showWithStatus(status: String, withCancelAndContinue: Bool = false) {
         MakeProgressHUD()
         MOHUD.me?.statusString = status
         MOHUD.me?.show()
+        me?.buttonsContainer?.hidden = !withCancelAndContinue
     }
-    public class func show(status: String, period: NSTimeInterval) {
-        MakeProgressHUD()
-        MOHUD.me?.statusString = status
-        MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: period)
+    /// Dismiss the HUD
+    public class func dismiss() {
+        MOHUD.onCancel = nil
+        MOHUD.onContinoue = nil
+        if let _me = me {
+            UIView.animateWithDuration(0.45, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                _me.view.alpha = 0;
+            }) { (finished) -> Void in
+                _me.view.removeFromSuperview()
+                
+            }
+        }
     }
+    
     //MARK: Show/hide and timer
     private func show() {
         MOHUD.me?.view.alpha = 0;
+        MOHUD.onCancel = .None
+        MOHUD.onContinoue = .None
         //NOTE: Keywindow should be shown first
         if let keywindow = UIApplication.sharedApplication().keyWindow {
             keywindow.addSubview(self.view)
             UIView.animateWithDuration(1.55, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 MOHUD.me?.view.alpha = 1;
+                MOHUD.setBlurStyle(.Light)
                 }) { (finished) -> Void in
                     
             }
         }
     }
-    
-    class func dismiss() {
-        if let _me = me {
-            UIView.animateWithDuration(0.45, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                _me.view.alpha = 0;
-                }) { (finished) -> Void in
-                    _me.view.removeFromSuperview()
-                    
-            }
-        }
+   
+    /// Change the Style of the Hud LIGHT/DARK/EXTRALIGHT
+    public class func setBlurStyle(style: UIBlurEffectStyle) {
+        me?.loaderContainer?.effect = UIBlurEffect(style: style)
+        let isDark = style == .Dark
+        let darkColor =  UIColor ( red: 0.04, green: 0.0695, blue: 0.061, alpha: 0.6 )
+        let lightColor = UIColor ( red: 1.0, green: 1.0, blue: 1.0, alpha: 0.6 )
+        me?.subTitleLabel?.textColor = isDark ? UIColor.whiteColor() : UIColor.blackColor()
+        me?.statusLabel?.textColor = isDark ? UIColor.whiteColor() : UIColor.blackColor()
+        me?.titleLabel?.textColor = isDark ? UIColor.whiteColor() : UIColor.blackColor()
+        me?.activityIndicator?.activityIndicatorViewStyle = isDark ? .WhiteLarge : .Gray
+        me?.buttonsContainer?.backgroundColor = isDark ? darkColor : lightColor
+        me?.continueButton?.setTitleColor(isDark ? UIColor.whiteColor() : UIColor.blackColor(), forState: .Normal)
+        me?.cancelButton?.setTitleColor(isDark ? UIColor.whiteColor() : UIColor.blackColor(), forState: .Normal)
+    }
+    /// hide Timer used when waiting for a hud to hide
+    public static func hideAfter(delay: NSTimeInterval) {
+        MOHUD.me?.hide(afterDelay: delay)
     }
     private var hideTimer: NSTimer?
     private func hide(afterDelay delay: NSTimeInterval) {
         hideTimer?.invalidate()
-        hideTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self.classForCoder, selector: Selector("dismiss"), userInfo: nil, repeats: false)
+        hideTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self.classForCoder, selector: #selector(MOHUD.dismiss), userInfo: nil, repeats: false)
     }
     
-    @IBAction private func hideHud(sender: AnyObject) {
+   
+}
+// MARK: - IBActions
+extension MOHUD {
+    @IBAction private func hideHud(sender: AnyObject? = nil) {
         MOHUD.dismiss()
+    }
+    @IBAction func cancelProcess(sender: AnyObject) {
+        MOHUD.onCancel?()
+        hideHud()
+    }
+    @IBAction func continueWithoutCancelling(sender: AnyObject) {
+        MOHUD.onContinoue?()
+        hideHud()
     }
 }
 
+extension MOHUD {
+    func commonSetup(hud: MOHUD) {
+        hud.errorLabel?.text = failureString
+        hud.loaderContainer?.layer.cornerRadius = 10
+        hud.subTitleLabel?.text = self.statusString
+        
+        hud.titleLabel?.text = self.titleString
+        hud.titleLabel?.adjustsFontSizeToFitWidth = true
 
-//MARK: Scenses organizing
+        buttonsContainer?.layer.cornerRadius = 5
+        // Set labels texts
+        hud.errorLabel?.text = MOHUDTexts.errorTitle
+        hud.titleLabel?.text = MOHUDTexts.subtitleStyleTitleConnecting
+        hud.subTitleLabel?.text = MOHUDTexts.subtitleStyleSubtitlePleaseWait
+        hud.successLabcel?.text = MOHUDTexts.successTitle
+        hud.continueButton?.setTitle(MOHUDTexts.continueButtonTitle, forState: .Normal)
+        hud.cancelButton?.setTitle(MOHUDTexts.cancelButtonTitle, forState: .Normal)
+        hud.statusLabel?.text = MOHUDTexts.defaultLoadingTitle
+    }
+}
+
+//MARK: - Scenses organizing
+//MARK: -
+
 struct MOStoryBoardID {
     static let progress = "Default"
     static let subtitle = "subtitle"
@@ -175,24 +223,15 @@ extension MOHUD {
     }
 }
 
-extension MOHUD {
-    func commonSetup(hud: MOHUD) {
-        if let errl = hud.errorLabel {
-            errl.text = failureString
-        }
-        if let _lc = hud.loaderContainer {
-            _lc.layer.cornerRadius = 10
-        }
-        if let _sl = hud.statusLabel {
-            if self.statusString != "" {
-                _sl.text = self.statusString
-            }
-        }
-        if let _tL = hud.titleLabel {
-            if self.titleString != "" {
-                _tL.text = self.titleString
-                _tL.adjustsFontSizeToFitWidth = true
-            }
-        }
-    }
+public struct MOHUDTexts {
+    static var continueButtonTitle = NSLocalizedString("Continue", comment: "Continue button label")
+    static var cancelButtonTitle = NSLocalizedString("Cancel", comment: "Cancel button label")
+    static var defaultLoadingTitle = NSLocalizedString("Loading", comment: "Normal Loading label")
+    
+    static var subtitleStyleTitleConnecting = NSLocalizedString("Connecting", comment: "Subtitle type Title Text")
+    static var subtitleStyleSubtitlePleaseWait = NSLocalizedString("Please wait", comment: "Subtitle type subTitle Text")
+    
+    static var successTitle = NSLocalizedString("Success", comment: "Success HUD Label Default Text")
+    static var errorTitle = NSLocalizedString("Error", comment: "Error HUD Label Default Text")
 }
+

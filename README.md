@@ -21,7 +21,7 @@ MOHUD adds continue and cancel buttons the loader HUD optionally.
 ##MANUAL
 Just Drag-drop the MOHUD folder into your project.
 ##CocoaPods
-`pod 'MOHUD', '~> 0.2' `
+`pod 'MOHUD' `
 #How to Use
 For Showing the HUD 
 

@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showSuccess(sender: AnyObject) {
-        MOHUD.showSuccess("You Made it")
+        MOHUD.showSuccess("You Made it so now you can fly")
     }
 
     @IBAction func showSubtitle(sender: AnyObject) {

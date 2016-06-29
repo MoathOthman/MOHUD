@@ -342,7 +342,7 @@
                     </view>
                     <connections>
                         <outlet property="loaderContainer" destination="ZMV-ov-CFN" id="mR5-Bf-Ljv"/>
-                        <outlet property="statusLabel" destination="dKX-VU-DWo" id="oin-GZ-b6l"/>
+                        <outlet property="successLabcel" destination="dKX-VU-DWo" id="sTB-hR-iru"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wv9-ij-WSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -372,27 +372,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="VGM-QY-2Qp">
-                                            <rect key="frame" x="68" y="24" width="62" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="9ek-mc-fy9"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="94U-A7-XK9">
-                                            <rect key="frame" x="8" y="102" width="182" height="91"/>
+                                            <rect key="frame" x="8" y="135" width="182" height="58"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="VGM-QY-2Qp">
+                                            <rect key="frame" x="68" y="76" width="62" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="62" id="1J5-ph-qSa"/>
+                                                <constraint firstAttribute="height" constant="50" id="1pT-Cw-Kqp"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="94U-A7-XK9" firstAttribute="top" secondItem="VGM-QY-2Qp" secondAttribute="bottom" constant="28" id="2GD-tj-MZa"/>
-                                        <constraint firstItem="VGM-QY-2Qp" firstAttribute="leading" secondItem="tx0-UL-BQE" secondAttribute="leading" constant="68" id="4jK-LB-O6Y"/>
                                         <constraint firstAttribute="bottom" secondItem="94U-A7-XK9" secondAttribute="bottom" constant="8" id="5Px-Oq-hIM"/>
                                         <constraint firstAttribute="trailing" secondItem="94U-A7-XK9" secondAttribute="trailing" constant="8" id="EGM-b8-pCu"/>
-                                        <constraint firstAttribute="trailing" secondItem="VGM-QY-2Qp" secondAttribute="trailing" constant="68" id="Krd-KE-eVs"/>
+                                        <constraint firstItem="94U-A7-XK9" firstAttribute="top" secondItem="VGM-QY-2Qp" secondAttribute="bottom" constant="9" id="GBU-SF-Aff"/>
+                                        <constraint firstItem="VGM-QY-2Qp" firstAttribute="centerX" secondItem="tx0-UL-BQE" secondAttribute="centerX" id="Pl8-KF-moX"/>
                                         <constraint firstItem="94U-A7-XK9" firstAttribute="leading" secondItem="tx0-UL-BQE" secondAttribute="leading" constant="8" id="c1g-Pk-vZq"/>
-                                        <constraint firstItem="VGM-QY-2Qp" firstAttribute="top" secondItem="tx0-UL-BQE" secondAttribute="top" constant="24" id="tPs-ll-Tr5"/>
+                                        <constraint firstItem="VGM-QY-2Qp" firstAttribute="centerY" secondItem="tx0-UL-BQE" secondAttribute="centerY" id="gSX-ae-pqR"/>
                                     </constraints>
                                 </view>
                                 <constraints>

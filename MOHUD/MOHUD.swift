@@ -24,10 +24,6 @@ public class MOHUD: UIViewController {
     @IBOutlet weak var successLabcel: UILabel?
     @IBOutlet weak var subTitleLabel: UILabel?
     
-    //MARK: variables
-    var statusString: String = ""
-    var failureString: String = ""
-    var titleString: String = ""
     // Closures
     /// executed when user taps on Continue button
     public static var onContinoue: (() -> Void)?
@@ -67,8 +63,8 @@ public class MOHUD: UIViewController {
     /// SHOW SUBTITLE HUD WITH TITLE AND SUBTITLE
     public class func showSubtitle(title title:String, subtitle:String, withCancelAndContinue: Bool = false) {
         MakeSubtitleHUD()
-        MOHUD.me?.statusString = subtitle
-        MOHUD.me?.titleString = title
+        MOHUDTexts.subtitleStyleSubtitlePleaseWait = subtitle
+        MOHUDTexts.subtitleStyleTitleConnecting = title
         MOHUD.me?.show()
         me?.buttonsContainer?.hidden = !withCancelAndContinue
     }
@@ -76,7 +72,7 @@ public class MOHUD: UIViewController {
     /// SHOW FAILURE HUD WITH MESSAGE
     public class func showWithError(errorString:String) {
         MakeFailureHUD()
-        MOHUD.me?.failureString = errorString
+        MOHUDTexts.errorTitle = errorString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: 2)
     }
@@ -84,7 +80,7 @@ public class MOHUD: UIViewController {
     /// SHOW SUCCESS HUD WITH MESSAGE
     public class func showSuccess(successString: String) {
         MakeSuccessHUD()
-        MOHUD.me?.statusString = successString
+        MOHUDTexts.successTitle = successString
         MOHUD.me?.show()
         MOHUD.me?.hide(afterDelay: 2)
     }
@@ -98,7 +94,7 @@ public class MOHUD: UIViewController {
     /// Show with Status
     public class func showWithStatus(status: String, withCancelAndContinue: Bool = false) {
         MakeProgressHUD()
-        MOHUD.me?.statusString = status
+        MOHUDTexts.defaultLoadingTitle = status
         MOHUD.me?.show()
         me?.buttonsContainer?.hidden = !withCancelAndContinue
     }
@@ -106,6 +102,7 @@ public class MOHUD: UIViewController {
     public class func dismiss() {
         MOHUD.onCancel = nil
         MOHUD.onContinoue = nil
+        MOHUDTexts.resetDefaults()
         if let _me = me {
             UIView.animateWithDuration(0.45, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 _me.view.alpha = 0;
@@ -176,11 +173,8 @@ extension MOHUD {
 
 extension MOHUD {
     func commonSetup(hud: MOHUD) {
-        hud.errorLabel?.text = failureString
         hud.loaderContainer?.layer.cornerRadius = 10
-        hud.subTitleLabel?.text = self.statusString
         
-        hud.titleLabel?.text = self.titleString
         hud.titleLabel?.adjustsFontSizeToFitWidth = true
 
         buttonsContainer?.layer.cornerRadius = 5
@@ -232,14 +226,42 @@ extension MOHUD {
  */
 
 public struct MOHUDTexts {
-    static var continueButtonTitle = NSLocalizedString("Continue", comment: "Continue button label")
-    static var cancelButtonTitle = NSLocalizedString("Cancel", comment: "Cancel button label")
-    static var defaultLoadingTitle = NSLocalizedString("Loading", comment: "Normal Loading label")
+    public static var continueButtonTitle = MOHUDDefaultTexts.continueButtonTitle
+    public static var cancelButtonTitle = MOHUDDefaultTexts.cancelButtonTitle
+    public static var defaultLoadingTitle = MOHUDDefaultTexts.defaultLoadingTitle
     
-    static var subtitleStyleTitleConnecting = NSLocalizedString("Connecting", comment: "Subtitle type Title Text")
-    static var subtitleStyleSubtitlePleaseWait = NSLocalizedString("Please wait", comment: "Subtitle type subTitle Text")
+    public static var subtitleStyleTitleConnecting = MOHUDDefaultTexts.subtitleStyleTitleConnecting
+    public static var subtitleStyleSubtitlePleaseWait = MOHUDDefaultTexts.subtitleStyleSubtitlePleaseWait
     
-    static var successTitle = NSLocalizedString("Success", comment: "Success HUD Label Default Text")
-    static var errorTitle = NSLocalizedString("Error", comment: "Error HUD Label Default Text")
+    public static var successTitle = MOHUDDefaultTexts.successTitle
+    public static var errorTitle = MOHUDDefaultTexts.errorTitle
+    /// mark texts to be reset to their default value after the HUD is dismissed
+    public static var isResetable = true
+    
+    /// reset To Defaults if the texts are resettable
+    private static func resetDefaults() {
+        if isResetable {
+            continueButtonTitle = MOHUDDefaultTexts.continueButtonTitle
+            cancelButtonTitle = MOHUDDefaultTexts.cancelButtonTitle
+            defaultLoadingTitle = MOHUDDefaultTexts.defaultLoadingTitle
+            subtitleStyleTitleConnecting = MOHUDDefaultTexts.subtitleStyleTitleConnecting
+            subtitleStyleSubtitlePleaseWait = MOHUDDefaultTexts.subtitleStyleSubtitlePleaseWait
+            successTitle = MOHUDDefaultTexts.successTitle
+            errorTitle = MOHUDDefaultTexts.errorTitle
+        }
+    }
+    
+    private struct MOHUDDefaultTexts {
+        
+        static var continueButtonTitle = NSLocalizedString("Continue", comment: "Continue button label")
+        static var cancelButtonTitle = NSLocalizedString("Cancel", comment: "Cancel button label")
+        static var defaultLoadingTitle = NSLocalizedString("Loading", comment: "Normal Loading label")
+        
+        static var subtitleStyleTitleConnecting = NSLocalizedString("Connecting", comment: "Subtitle type Title Text")
+        static var subtitleStyleSubtitlePleaseWait = NSLocalizedString("Please wait", comment: "Subtitle type subTitle Text")
+        
+        static var successTitle = NSLocalizedString("Success", comment: "Success HUD Label Default Text")
+        static var errorTitle = NSLocalizedString("Error", comment: "Error HUD Label Default Text")
+    }
 }
 

@@ -37,7 +37,7 @@ public class MOHUD: UIViewController {
     }
     //MARK: Constructor
     class func ME(_me:MOHUD?) -> MOHUD?{
-        dismiss() // if any there dismiss it
+//        dismiss() // if any there dismiss it
         me = _me
         if let me = _me {
             //            me.commonSetup(me)
@@ -100,9 +100,9 @@ public class MOHUD: UIViewController {
     }
     /// Dismiss the HUD
     public class func dismiss() {
-        MOHUD.onCancel = nil
-        MOHUD.onContinoue = nil
-        MOHUDTexts.resetDefaults()
+//        MOHUD.onCancel = nil
+//        MOHUD.onContinoue = nil
+//        MOHUDTexts.resetDefaults()
         if let _me = me {
             UIView.animateWithDuration(0.45, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 _me.view.alpha = 0;

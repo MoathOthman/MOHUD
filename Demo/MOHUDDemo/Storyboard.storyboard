@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IAj-Z2-ehq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="YvG-Z0-5O1">
+            <objects>
+                <viewController id="IAj-Z2-ehq" customClass="ViewController" customModule="MOHUDDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lNw-Sm-B7Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="wai-ph-CXP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fd4-D6-PsM" customClass="GradientView" customModule="MOHUDDemo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Y5-KV-U6h">
+                                <rect key="frame" x="151" y="240" width="298" height="41"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="24"/>
+                                <state key="normal" title="SHOW">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDefault:" destination="IAj-Z2-ehq" eventType="touchUpInside" id="z0x-0M-ymu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGq-sJ-h4x">
+                                <rect key="frame" x="151" y="289" width="298" height="41"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="24"/>
+                                <state key="normal" title="SHOW WITH STATUS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWithStatus:" destination="IAj-Z2-ehq" eventType="touchUpInside" id="GQa-Kr-nGb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KP-Y7-n6e">
+                                <rect key="frame" x="151" y="338" width="298" height="41"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="24"/>
+                                <state key="normal" title="SHOW WITH SUCCESS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSuccess:" destination="IAj-Z2-ehq" eventType="touchUpInside" id="XX0-Rb-fa1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaE-km-tTo">
+                                <rect key="frame" x="151" y="387" width="298" height="41"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="24"/>
+                                <state key="normal" title="SHOW WITH FAILURE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFailure:" destination="IAj-Z2-ehq" eventType="touchUpInside" id="3ol-l6-PGQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjM-gn-LbE">
+                                <rect key="frame" x="151" y="430" width="298" height="41"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="24"/>
+                                <state key="normal" title="SHOW WITH SUBTITLE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSubtitle:" destination="IAj-Z2-ehq" eventType="touchUpInside" id="Pgr-GE-M4f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOHUD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3b-8P-9LM">
+                                <rect key="frame" x="202" y="36" width="196" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="iuI-fe-dew"/>
+                                    <constraint firstAttribute="height" constant="66" id="pHK-Ma-7sq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAh-5I-xtw">
+                                <rect key="frame" x="151" y="479" width="298" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="PJc-OU-M6J"/>
+                                    <constraint firstAttribute="width" constant="298" id="inH-Md-Z1g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                <state key="normal" title="SHOW WITH CANCEL AND CONTINUE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWithCancelAndContinue:" destination="IAj-Z2-ehq" eventType="touchUpInside" id="jRE-QN-Uij"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Y5-KV-U6h" firstAttribute="height" secondItem="wGq-sJ-h4x" secondAttribute="height" id="2nQ-Lh-FOz"/>
+                            <constraint firstItem="wai-ph-CXP" firstAttribute="top" secondItem="gAh-5I-xtw" secondAttribute="bottom" constant="80" id="8fK-WA-MrK"/>
+                            <constraint firstItem="x3b-8P-9LM" firstAttribute="centerX" secondItem="fd4-D6-PsM" secondAttribute="centerX" id="ALk-jF-HHc"/>
+                            <constraint firstItem="gaE-km-tTo" firstAttribute="centerX" secondItem="GjM-gn-LbE" secondAttribute="centerX" id="BGt-1a-FgO"/>
+                            <constraint firstItem="GjM-gn-LbE" firstAttribute="centerX" secondItem="gAh-5I-xtw" secondAttribute="centerX" id="D0e-a6-wfY"/>
+                            <constraint firstItem="wGq-sJ-h4x" firstAttribute="centerX" secondItem="1KP-Y7-n6e" secondAttribute="centerX" id="FiH-Y1-ITa"/>
+                            <constraint firstItem="gaE-km-tTo" firstAttribute="top" secondItem="1KP-Y7-n6e" secondAttribute="bottom" constant="8" id="Hxn-7x-1Wt"/>
+                            <constraint firstItem="1KP-Y7-n6e" firstAttribute="height" secondItem="gaE-km-tTo" secondAttribute="height" id="IKY-yO-AUH"/>
+                            <constraint firstItem="x3b-8P-9LM" firstAttribute="top" secondItem="lNw-Sm-B7Z" secondAttribute="bottom" constant="16" id="Jef-gq-0vI"/>
+                            <constraint firstItem="wGq-sJ-h4x" firstAttribute="top" secondItem="4Y5-KV-U6h" secondAttribute="bottom" constant="8" id="LS7-4f-aMJ"/>
+                            <constraint firstItem="wGq-sJ-h4x" firstAttribute="height" secondItem="1KP-Y7-n6e" secondAttribute="height" id="P3t-hm-6hD"/>
+                            <constraint firstItem="1KP-Y7-n6e" firstAttribute="top" secondItem="wGq-sJ-h4x" secondAttribute="bottom" constant="8" id="Szn-pv-RIL"/>
+                            <constraint firstItem="GjM-gn-LbE" firstAttribute="width" secondItem="gAh-5I-xtw" secondAttribute="width" id="XAJ-JG-mM7"/>
+                            <constraint firstItem="4Y5-KV-U6h" firstAttribute="centerX" secondItem="wGq-sJ-h4x" secondAttribute="centerX" id="YjE-5A-5JJ"/>
+                            <constraint firstItem="4Y5-KV-U6h" firstAttribute="width" secondItem="wGq-sJ-h4x" secondAttribute="width" id="Zur-JQ-TS2"/>
+                            <constraint firstItem="gaE-km-tTo" firstAttribute="width" secondItem="GjM-gn-LbE" secondAttribute="width" id="ZxB-Ru-fBd"/>
+                            <constraint firstItem="GjM-gn-LbE" firstAttribute="top" secondItem="gaE-km-tTo" secondAttribute="bottom" constant="2" id="aCp-jC-Qus"/>
+                            <constraint firstItem="GjM-gn-LbE" firstAttribute="height" secondItem="gAh-5I-xtw" secondAttribute="height" id="aWB-ab-v2r"/>
+                            <constraint firstItem="gAh-5I-xtw" firstAttribute="centerX" secondItem="fd4-D6-PsM" secondAttribute="centerX" id="as6-0R-LeS"/>
+                            <constraint firstItem="wGq-sJ-h4x" firstAttribute="width" secondItem="1KP-Y7-n6e" secondAttribute="width" id="edR-wL-aFT"/>
+                            <constraint firstItem="gAh-5I-xtw" firstAttribute="top" secondItem="GjM-gn-LbE" secondAttribute="bottom" constant="8" id="hoi-U6-nBn"/>
+                            <constraint firstItem="1KP-Y7-n6e" firstAttribute="width" secondItem="gaE-km-tTo" secondAttribute="width" id="mcH-9c-Fz4"/>
+                            <constraint firstItem="gaE-km-tTo" firstAttribute="height" secondItem="GjM-gn-LbE" secondAttribute="height" id="qiN-kz-bFC"/>
+                            <constraint firstItem="1KP-Y7-n6e" firstAttribute="centerX" secondItem="gaE-km-tTo" secondAttribute="centerX" id="sfF-8s-eE4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xtr-Wt-ZUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="547" y="332"/>
+        </scene>
+    </scenes>
+</document>

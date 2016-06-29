@@ -10,9 +10,9 @@
 		EC32AB211D2140A40024C3DF /* MOHUD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC32AB1E1D2140A40024C3DF /* MOHUD.storyboard */; };
 		EC32AB221D2140A40024C3DF /* MOHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC32AB1F1D2140A40024C3DF /* MOHUD.swift */; };
 		EC32AB231D2140A40024C3DF /* MOHUD.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC32AB201D2140A40024C3DF /* MOHUD.xcassets */; };
+		EC32AB2C1D24856B0024C3DF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC32AB2B1D24856B0024C3DF /* Storyboard.storyboard */; };
 		ECA66FD21BB0318900159D98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA66FD11BB0318900159D98 /* AppDelegate.swift */; };
 		ECA66FD41BB0318900159D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA66FD31BB0318900159D98 /* ViewController.swift */; };
-		ECA66FD71BB0318900159D98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA66FD51BB0318900159D98 /* Main.storyboard */; };
 		ECA66FD91BB0318900159D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA66FD81BB0318900159D98 /* Assets.xcassets */; };
 		ECA66FDC1BB0318900159D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA66FDA1BB0318900159D98 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -38,10 +38,10 @@
 		EC32AB1E1D2140A40024C3DF /* MOHUD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MOHUD.storyboard; sourceTree = "<group>"; };
 		EC32AB1F1D2140A40024C3DF /* MOHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHUD.swift; sourceTree = "<group>"; };
 		EC32AB201D2140A40024C3DF /* MOHUD.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MOHUD.xcassets; sourceTree = "<group>"; };
+		EC32AB2B1D24856B0024C3DF /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		ECA66FCE1BB0318900159D98 /* MOHUDDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOHUDDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA66FD11BB0318900159D98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECA66FD31BB0318900159D98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ECA66FD61BB0318900159D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECA66FD81BB0318900159D98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECA66FDB1BB0318900159D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA66FDD1BB0318900159D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 				EC32AB1D1D2140A40024C3DF /* MOHUD */,
 				ECA66FD11BB0318900159D98 /* AppDelegate.swift */,
 				ECA66FD31BB0318900159D98 /* ViewController.swift */,
-				ECA66FD51BB0318900159D98 /* Main.storyboard */,
+				EC32AB2B1D24856B0024C3DF /* Storyboard.storyboard */,
 				ECA66FD81BB0318900159D98 /* Assets.xcassets */,
 				ECA66FDA1BB0318900159D98 /* LaunchScreen.storyboard */,
 				ECA66FDD1BB0318900159D98 /* Info.plist */,
@@ -232,7 +232,7 @@
 				EC32AB211D2140A40024C3DF /* MOHUD.storyboard in Resources */,
 				ECA66FDC1BB0318900159D98 /* LaunchScreen.storyboard in Resources */,
 				ECA66FD91BB0318900159D98 /* Assets.xcassets in Resources */,
-				ECA66FD71BB0318900159D98 /* Main.storyboard in Resources */,
+				EC32AB2C1D24856B0024C3DF /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ECA66FD51BB0318900159D98 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ECA66FD61BB0318900159D98 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ECA66FDA1BB0318900159D98 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

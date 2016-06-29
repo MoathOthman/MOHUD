@@ -116,14 +116,11 @@ public class MOHUD: UIViewController {
     //MARK: Show/hide and timer
     private func show() {
         MOHUD.me?.view.alpha = 0;
-        MOHUD.onCancel = .None
-        MOHUD.onContinoue = .None
         //NOTE: Keywindow should be shown first
-        if let keywindow = UIApplication.sharedApplication().keyWindow {
+        if let keywindow = UIApplication.sharedApplication().windows.last {
             keywindow.addSubview(self.view)
             UIView.animateWithDuration(1.55, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 MOHUD.me?.view.alpha = 1;
-                MOHUD.setBlurStyle(.Light)
                 }) { (finished) -> Void in
                     
             }
@@ -173,11 +170,7 @@ extension MOHUD {
 
 extension MOHUD {
     func commonSetup(hud: MOHUD) {
-        hud.loaderContainer?.layer.cornerRadius = 10
-        
         hud.titleLabel?.adjustsFontSizeToFitWidth = true
-
-        buttonsContainer?.layer.cornerRadius = 5
         // Set labels texts
         hud.errorLabel?.text = MOHUDTexts.errorTitle
         hud.titleLabel?.text = MOHUDTexts.subtitleStyleTitleConnecting
@@ -188,6 +181,41 @@ extension MOHUD {
         hud.statusLabel?.text = MOHUDTexts.defaultLoadingTitle
     }
 }
+
+// MARK: - UTILITIES
+
+/// set of view inpectables
+extension UIView {
+    /// border color inspectable prop.
+    @IBInspectable public var borderColor: UIColor  {
+        set {
+            self.layer.borderColor = newValue.CGColor
+        }
+        get {
+            return UIColor(CGColor: self.layer.borderColor!)
+        }
+    }
+    /// modify self.layer.borderWidth
+    @IBInspectable public var borderWidth: CGFloat   {
+        set {
+            self.layer.borderWidth = newValue
+        }
+        get {
+            return self.layer.borderWidth
+        }
+    }
+    /// modify self.cornerRadius and set clipsTobounds to true
+    @IBInspectable public var cornerRadius: CGFloat  {
+        set {
+            self.layer.cornerRadius = newValue
+            self.clipsToBounds = true
+        }
+        get {
+            return self.layer.cornerRadius
+        }
+    }
+}
+
 
 //MARK: - Scenses organizing
 //MARK: -
@@ -219,9 +247,9 @@ extension MOHUD {
     }
 }
 /**
-  Default Texts Used by the HUDs 
-  These Can be changed before showing the HUD.
-  They are also localization ready .
+ Default Texts Used by the HUDs
+ These Can be changed before showing the HUD.
+ They are also localization ready .
  @auther Moath Othman
  */
 
@@ -264,4 +292,3 @@ public struct MOHUDTexts {
         static var errorTitle = NSLocalizedString("Error", comment: "Error HUD Label Default Text")
     }
 }
-

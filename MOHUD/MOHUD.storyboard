@@ -26,9 +26,6 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iq9-LM-yUG">
                                             <rect key="frame" x="8" y="129" width="182" height="64"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="64" id="RVi-4S-v5a"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -52,11 +49,7 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="G81-hy-kF8">
-                                <rect key="frame" x="141" y="266" width="37" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="37" id="LJm-dV-5bp"/>
-                                    <constraint firstAttribute="height" constant="37" id="Qg8-Ek-V55"/>
-                                </constraints>
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1d2-lY-KzO" userLabel="ButtonsContainer">
@@ -103,6 +96,7 @@
                             </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="iq9-LM-yUG" firstAttribute="top" secondItem="G81-hy-kF8" secondAttribute="bottom" constant="10" id="9Sn-OC-yrc"/>
                             <constraint firstItem="G81-hy-kF8" firstAttribute="centerX" secondItem="5ZU-OQ-DqO" secondAttribute="centerX" id="FMR-hZ-ylw"/>
                             <constraint firstItem="Rcg-np-KFx" firstAttribute="top" secondItem="1d2-lY-KzO" secondAttribute="bottom" constant="-6" id="I4P-0I-5Ae"/>
                             <constraint firstAttribute="centerX" secondItem="aRO-VP-6Qo" secondAttribute="centerX" id="PEe-7C-5QV"/>

@@ -1,13 +1,15 @@
-//
 //  MOHUD.swift
-//  OnTheMap
-//
 //  Created by Moath_Othman on 6/27/15.
-//  Copyright (c) 2015 Moba. All rights reserved.
-//
 
 import UIKit
-
+/**
+ MOHUD
+ Simple HUD the looks like the Mac status alert view .
+ can be used to indicate a process, like API request, and for status, like Success and failure.
+ and you can add continue and cancel handlers so user can cancel the request or continue without blocking the screen.
+ 
+ @auther Moath OTjman
+ */
 public class MOHUD: UIViewController {
     static var me:MOHUD?
     //MARK: Outlets
@@ -222,6 +224,12 @@ extension MOHUD {
         }
     }
 }
+/**
+  Default Texts Used by the HUDs 
+  These Can be changed before showing the HUD.
+  They are also localization ready .
+ @auther Moath Othman
+ */
 
 public struct MOHUDTexts {
     static var continueButtonTitle = NSLocalizedString("Continue", comment: "Continue button label")

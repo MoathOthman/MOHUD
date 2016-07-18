@@ -4,6 +4,8 @@
 [![CocoaPods](https://img.shields.io/cocoapods/l/MOHUD.svg?maxAge=2592000?style=plastic)]()
 [![CocoaPods](https://img.shields.io/cocoapods/p/MOHUD.svg?maxAge=2592000?style=plastic)]()
 [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/MOHUD.svg?maxAge=2592000?style=plastic)]()
+[![codebeat badge](https://codebeat.co/badges/798c46ce-3d17-4118-8d1b-3c69c3d6a9c9)](https://codebeat.co/projects/github-com-moathothman-mohud)
+
 # MOHUD
 A simple HUD to indicate activity, success, and failure.
 

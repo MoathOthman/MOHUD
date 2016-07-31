@@ -66,3 +66,9 @@ MOHUD.onContinoue = {
 #license
 
 MIT
+
+#Author 
+ * Twitter : [dark_torch](https://twitter.com/dark_torch)
+ * Website: https://moathothman.com
+ * Check my app PuzzPic http://apple.co/2a6Ow8W
+	

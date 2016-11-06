@@ -17,23 +17,6 @@
 		ECA66FDC1BB0318900159D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA66FDA1BB0318900159D98 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		ECA66FE31BB0318900159D98 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ECA66FC61BB0318900159D98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ECA66FCD1BB0318900159D98;
-			remoteInfo = MOHUDDemo;
-		};
-		ECA66FEE1BB0318900159D98 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ECA66FC61BB0318900159D98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ECA66FCD1BB0318900159D98;
-			remoteInfo = MOHUDDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		EC32AB1E1D2140A40024C3DF /* MOHUD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MOHUD.storyboard; sourceTree = "<group>"; };
 		EC32AB1F1D2140A40024C3DF /* MOHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOHUD.swift; sourceTree = "<group>"; };
@@ -45,26 +28,10 @@
 		ECA66FD81BB0318900159D98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECA66FDB1BB0318900159D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA66FDD1BB0318900159D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECA66FE21BB0318900159D98 /* MOHUDDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOHUDDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECA66FED1BB0318900159D98 /* MOHUDDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOHUDDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		ECA66FCB1BB0318900159D98 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECA66FDF1BB0318900159D98 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECA66FEA1BB0318900159D98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -105,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				ECA66FCE1BB0318900159D98 /* MOHUDDemo.app */,
-				ECA66FE21BB0318900159D98 /* MOHUDDemoTests.xctest */,
-				ECA66FED1BB0318900159D98 /* MOHUDDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,42 +110,6 @@
 			productReference = ECA66FCE1BB0318900159D98 /* MOHUDDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ECA66FE11BB0318900159D98 /* MOHUDDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ECA66FF91BB0318900159D98 /* Build configuration list for PBXNativeTarget "MOHUDDemoTests" */;
-			buildPhases = (
-				ECA66FDE1BB0318900159D98 /* Sources */,
-				ECA66FDF1BB0318900159D98 /* Frameworks */,
-				ECA66FE01BB0318900159D98 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ECA66FE41BB0318900159D98 /* PBXTargetDependency */,
-			);
-			name = MOHUDDemoTests;
-			productName = MOHUDDemoTests;
-			productReference = ECA66FE21BB0318900159D98 /* MOHUDDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		ECA66FEC1BB0318900159D98 /* MOHUDDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ECA66FFC1BB0318900159D98 /* Build configuration list for PBXNativeTarget "MOHUDDemoUITests" */;
-			buildPhases = (
-				ECA66FE91BB0318900159D98 /* Sources */,
-				ECA66FEA1BB0318900159D98 /* Frameworks */,
-				ECA66FEB1BB0318900159D98 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ECA66FEF1BB0318900159D98 /* PBXTargetDependency */,
-			);
-			name = MOHUDDemoUITests;
-			productName = MOHUDDemoUITests;
-			productReference = ECA66FED1BB0318900159D98 /* MOHUDDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -192,14 +121,7 @@
 				TargetAttributes = {
 					ECA66FCD1BB0318900159D98 = {
 						CreatedOnToolsVersion = 7.1;
-					};
-					ECA66FE11BB0318900159D98 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = ECA66FCD1BB0318900159D98;
-					};
-					ECA66FEC1BB0318900159D98 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = ECA66FCD1BB0318900159D98;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -217,8 +139,6 @@
 			projectRoot = "";
 			targets = (
 				ECA66FCD1BB0318900159D98 /* MOHUDDemo */,
-				ECA66FE11BB0318900159D98 /* MOHUDDemoTests */,
-				ECA66FEC1BB0318900159D98 /* MOHUDDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,20 +156,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECA66FE01BB0318900159D98 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECA66FEB1BB0318900159D98 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -263,34 +169,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECA66FDE1BB0318900159D98 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECA66FE91BB0318900159D98 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ECA66FE41BB0318900159D98 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ECA66FCD1BB0318900159D98 /* MOHUDDemo */;
-			targetProxy = ECA66FE31BB0318900159D98 /* PBXContainerItemProxy */;
-		};
-		ECA66FEF1BB0318900159D98 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ECA66FCD1BB0318900159D98 /* MOHUDDemo */;
-			targetProxy = ECA66FEE1BB0318900159D98 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ECA66FDA1BB0318900159D98 /* LaunchScreen.storyboard */ = {
@@ -393,6 +272,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whitetorch.MOHUDDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -405,55 +285,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whitetorch.MOHUDDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		ECA66FFA1BB0318900159D98 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MOHUDDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitetorch.MOHUDDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MOHUDDemo.app/MOHUDDemo";
-			};
-			name = Debug;
-		};
-		ECA66FFB1BB0318900159D98 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MOHUDDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitetorch.MOHUDDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MOHUDDemo.app/MOHUDDemo";
-			};
-			name = Release;
-		};
-		ECA66FFD1BB0318900159D98 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = MOHUDDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitetorch.MOHUDDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = MOHUDDemo;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		ECA66FFE1BB0318900159D98 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = MOHUDDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whitetorch.MOHUDDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = MOHUDDemo;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -474,24 +307,6 @@
 			buildConfigurations = (
 				ECA66FF71BB0318900159D98 /* Debug */,
 				ECA66FF81BB0318900159D98 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ECA66FF91BB0318900159D98 /* Build configuration list for PBXNativeTarget "MOHUDDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ECA66FFA1BB0318900159D98 /* Debug */,
-				ECA66FFB1BB0318900159D98 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ECA66FFC1BB0318900159D98 /* Build configuration list for PBXNativeTarget "MOHUDDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ECA66FFD1BB0318900159D98 /* Debug */,
-				ECA66FFE1BB0318900159D98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

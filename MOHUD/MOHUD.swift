@@ -11,7 +11,16 @@ import UIKit
  @auther Moath OTjman
  */
 open class MOHUD: UIViewController {
-    static var me:MOHUD?
+    static var me:MOHUD? {
+        didSet {
+            if let _m = me {
+                _m.hudstage = HUDStage(view: _m)
+            }
+        }
+    }
+    /// Responsible for showing and hiding the hud
+    var hudstage: HUDStage!
+
     //MARK: Outlets
     @IBOutlet weak var loaderContainer: UIVisualEffectView?
     @IBOutlet weak var errorLabel: UILabel?
@@ -56,71 +65,68 @@ open class MOHUD: UIViewController {
     // MARK: Subtitle
     /// SHOW SUBTITLE HUD WITH TITLE AND SUBTITLE
     open class func showSubtitle(title:String, subtitle:String, withCancelAndContinue: Bool = false) {
-        MakeSubtitleHUD()
-        MOHUDTexts.subtitleStyleSubtitlePleaseWait = subtitle
-        MOHUDTexts.subtitleStyleTitleConnecting = title
-        MOHUD.me?.show()
-        me?.buttonsContainer?.isHidden = !withCancelAndContinue
+        MOHUD.dismissWith(animated: false) {
+            MakeSubtitleHUD()
+            MOHUDTexts.subtitleStyleSubtitlePleaseWait = subtitle
+            MOHUDTexts.subtitleStyleTitleConnecting = title
+            MOHUD.me?.show()
+            me?.buttonsContainer?.isHidden = !withCancelAndContinue
+        }
     }
     //MARK: Fail
     /// SHOW FAILURE HUD WITH MESSAGE
     open class func showWithError(_ errorString:String) {
-        MakeFailureHUD()
-        MOHUDTexts.errorTitle = errorString
-        MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: 2)
+        MOHUD.dismissWith(animated: false) {
+            MakeFailureHUD()
+            MOHUDTexts.errorTitle = errorString
+            MOHUD.me?.show()
+            MOHUD.me?.hide(afterDelay: 2)
+        }
     }
     //MARK: Success
     /// SHOW SUCCESS HUD WITH MESSAGE
     open class func showSuccess(_ successString: String) {
-        MakeSuccessHUD()
-        MOHUDTexts.successTitle = successString
-        MOHUD.me?.show()
-        MOHUD.me?.hide(afterDelay: 2)
+        MOHUD.dismissWith(animated: false) {
+            MakeSuccessHUD()
+            MOHUDTexts.successTitle = successString
+            MOHUD.me?.show()
+            MOHUD.me?.hide(afterDelay: 2)
+        }
     }
     //MARK: Default show
     /// SHOW THE DEFAUL HUD WITH LOADING MESSAGE
     open class func show(_ withCancelAndContinue: Bool = false) {
-        MakeProgressHUD()
-        MOHUD.me?.show()
-        me?.buttonsContainer?.isHidden = !withCancelAndContinue
+        MOHUD.dismissWith(animated: false) {
+            MakeProgressHUD()
+            MOHUD.me?.show()
+            me?.buttonsContainer?.isHidden = !withCancelAndContinue
+        }
     }
     /// Show with Status
     open class func showWithStatus(_ status: String, withCancelAndContinue: Bool = false) {
-        MakeProgressHUD()
-        MOHUDTexts.defaultLoadingTitle = status
-        MOHUD.me?.show()
-        me?.buttonsContainer?.isHidden = !withCancelAndContinue
-    }
-    /// Dismiss the HUD
-    open class func dismiss() {
-//        MOHUD.onCancel = nil
-//        MOHUD.onContinoue = nil
-//        MOHUDTexts.resetDefaults()
-        if let _me = me {
-            UIView.animate(withDuration: 0.45, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
-                _me.view.alpha = 0;
-            }) { (finished) -> Void in
-                _me.view.removeFromSuperview()
-                
-            }
+        MOHUD.dismissWith(animated: false) { _ in
+            MakeProgressHUD()
+            MOHUDTexts.defaultLoadingTitle = status
+            MOHUD.me?.show()
+            me?.buttonsContainer?.isHidden = !withCancelAndContinue
         }
     }
     
+    /// Dismiss the HUD
+    open class func dismiss() {
+        dismissWith {}
+    }
+    
+    open class func dismissWith(animated: Bool = true, completed: @escaping (Void) -> Void) {
+        MOHUD.me?.hudstage.hide()
+        completed()
+    }
     //MARK: Show/hide and timer
     fileprivate func show() {
-        MOHUD.me?.view.alpha = 0;
-        //NOTE: Keywindow should be shown first
-        if let keywindow = UIApplication.shared.windows.last {
-            keywindow.addSubview(self.view)
-            UIView.animate(withDuration: 1.55, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: UIViewAnimationOptions(), animations: { () -> Void in
-                MOHUD.me?.view.alpha = 1;
-                }) { (finished) -> Void in
-                    
-            }
-        }
+        hudstage = HUDStage(view: MOHUD.me!)
+        hudstage.show()
     }
-   
+    
     /// Change the Style of the Hud LIGHT/DARK/EXTRALIGHT
     open class func setBlurStyle(_ style: UIBlurEffectStyle) {
         me?.loaderContainer?.effect = UIBlurEffect(style: style)
@@ -145,7 +151,7 @@ open class MOHUD: UIViewController {
         hideTimer = Timer.scheduledTimer(timeInterval: delay, target: self.classForCoder, selector: #selector(MOHUD.dismiss), userInfo: nil, repeats: false)
     }
     
-   
+    
 }
 // MARK: - IBActions
 extension MOHUD {
@@ -274,7 +280,6 @@ public struct MOHUDTexts {
     }
     
     fileprivate struct MOHUDDefaultTexts {
-        
         static var continueButtonTitle = NSLocalizedString("Continue", comment: "Continue button label")
         static var cancelButtonTitle = NSLocalizedString("Cancel", comment: "Cancel button label")
         static var defaultLoadingTitle = NSLocalizedString("Loading", comment: "Normal Loading label")
@@ -286,3 +291,25 @@ public struct MOHUDTexts {
         static var errorTitle = NSLocalizedString("Error", comment: "Error HUD Label Default Text")
     }
 }
+
+/// handle where and when to show the HUD
+class HUDStage {
+    unowned let view: UIViewController
+    private var window: UIWindow?
+    init(view: UIViewController) {
+        self.view = view
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = view
+    }
+    
+    func show() {
+        window?.windowLevel = UIWindowLevelAlert + 1
+        window?.makeKeyAndVisible()
+    }
+    
+    func hide() {
+        window?.isHidden = true
+        window = nil
+    }
+}
+

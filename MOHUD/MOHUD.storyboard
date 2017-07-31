@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--MOHUD-->
@@ -15,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Rcg-np-KFx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5ZU-OQ-DqO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRO-VP-6Qo">
-                                <rect key="frame" x="61" y="183" width="198" height="201"/>
+                                <rect key="frame" x="88.5" y="233" width="198" height="201"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NYK-Ly-gN0">
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +31,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iq9-LM-yUG">
                                             <rect key="frame" x="8" y="129" width="182" height="64"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -49,17 +53,17 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="G81-hy-kF8">
-                                <rect key="frame" x="142" y="265" width="37" height="37"/>
-                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1d2-lY-KzO" userLabel="ButtonsContainer">
-                                <rect key="frame" x="61" y="468" width="198" height="106"/>
+                                <rect key="frame" x="88.5" y="567" width="198" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPl-xV-LAA">
                                         <rect key="frame" x="0.0" y="53" width="198" height="53"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelProcess:" destination="vna-RR-cwu" eventType="touchUpInside" id="alh-lb-yna"/>
@@ -69,14 +73,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="198" height="53"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
                                         <state key="normal" title="Continue">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="continueWithoutCancelling:" destination="vna-RR-cwu" eventType="touchUpInside" id="J0l-l4-Kvl"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="WPl-xV-LAA" firstAttribute="height" secondItem="1d2-lY-KzO" secondAttribute="height" multiplier="0.5" id="1Ga-h7-8Xa"/>
                                     <constraint firstItem="8xo-uz-0dY" firstAttribute="top" secondItem="1d2-lY-KzO" secondAttribute="top" id="6UN-j8-ahr"/>
@@ -118,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9O-e9-dsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="266"/>
+            <point key="canvasLocation" x="-2" y="258"/>
         </scene>
         <!--MOHUD-->
         <scene sceneID="lIZ-Of-Wm2">
@@ -129,39 +133,38 @@
                         <viewControllerLayoutGuide type="bottom" id="9tB-4J-Cv9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nyn-8u-IIG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-u1-WaS">
-                                <rect key="frame" x="61" y="183" width="198" height="201"/>
+                                <rect key="frame" x="88.5" y="233" width="198" height="201"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kf0-J8-ezk">
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMQ-zn-7Bd">
                                             <rect key="frame" x="0.0" y="0.0" width="198" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="lwd-Cz-gMP">
                                                 <rect key="frame" x="0.0" y="0.0" width="198" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="light"/>
-                                            </vibrancyEffect>
+                                            <blurEffect style="light"/>
                                         </visualEffectView>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZVM-VT-7n6">
                                             <rect key="frame" x="80" y="82" width="37" height="37"/>
-                                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GTe-PT-7dA">
                                             <rect key="frame" x="8" y="136" width="182" height="57"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mm-XY-Dl5">
                                             <rect key="frame" x="12" y="10" width="173" height="46"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -190,13 +193,13 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqt-5m-eID" userLabel="ButtonsContainer">
-                                <rect key="frame" x="61" y="468" width="198" height="106"/>
+                                <rect key="frame" x="88.5" y="567" width="198" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="equ-jU-e0i">
                                         <rect key="frame" x="0.0" y="53" width="198" height="53"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelProcess:" destination="vna-RR-cwu" eventType="touchUpInside" id="nS8-xU-09n"/>
@@ -206,14 +209,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="198" height="53"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
                                         <state key="normal" title="Continue">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="continueWithoutCancelling:" destination="vna-RR-cwu" eventType="touchUpInside" id="gNW-26-9gz"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qxh-7e-55d" secondAttribute="trailing" id="8XH-VI-NBf"/>
                                     <constraint firstItem="equ-jU-e0i" firstAttribute="leading" secondItem="aqt-5m-eID" secondAttribute="leading" id="EEJ-sc-lAO"/>
@@ -232,7 +235,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aqt-5m-eID" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mz8-u1-WaS" secondAttribute="bottom" constant="5" id="6RW-4o-UHo"/>
                             <constraint firstItem="aqt-5m-eID" firstAttribute="width" secondItem="mz8-u1-WaS" secondAttribute="width" id="CLH-gb-zUh"/>
@@ -253,22 +256,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdp-tN-oXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="265"/>
+            <point key="canvasLocation" x="429" y="258"/>
         </scene>
         <!--MOHUD-->
         <scene sceneID="Hc2-Lq-zBN">
             <objects>
-                <viewController storyboardIdentifier="success" modalPresentationStyle="overCurrentContext" id="QMi-Dg-4eU" customClass="MOHUD" customModule="MOHUDDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="success" modalPresentationStyle="overFullScreen" id="QMi-Dg-4eU" customClass="MOHUD" customModule="MOHUDDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TTx-ce-ldg"/>
                         <viewControllerLayoutGuide type="bottom" id="bdJ-nS-j0q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3hG-I7-Omc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMV-ov-CFN">
-                                <rect key="frame" x="61" y="183" width="198" height="201"/>
+                                <rect key="frame" x="88.5" y="233" width="198" height="201"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DJC-rP-2cW">
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,9 +282,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="light"/>
-                                            </vibrancyEffect>
+                                            <blurEffect style="light"/>
                                         </visualEffectView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="p2R-O0-VWR">
                                             <rect key="frame" x="60" y="76" width="77" height="50"/>
@@ -296,7 +297,7 @@
                                                 <constraint firstAttribute="height" constant="45.5" id="sTB-rM-KMC"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -324,7 +325,7 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="ZMV-ov-CFN" secondAttribute="centerX" id="O6u-VG-twL"/>
@@ -346,7 +347,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="893" y="265"/>
+            <point key="canvasLocation" x="838" y="258"/>
         </scene>
         <!--MOHUD-->
         <scene sceneID="JeO-5V-2iO">
@@ -357,11 +358,11 @@
                         <viewControllerLayoutGuide type="bottom" id="09l-uH-eg1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YQ5-P0-gch">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1j9-UB-7iI">
-                                <rect key="frame" x="61" y="183" width="198" height="201"/>
+                                <rect key="frame" x="88.5" y="233" width="198" height="201"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tx0-UL-BQE">
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="201"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,7 +370,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="94U-A7-XK9">
                                             <rect key="frame" x="8" y="135" width="182" height="58"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="33"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="VGM-QY-2Qp">
@@ -401,7 +402,7 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="1j9-UB-7iI" secondAttribute="centerX" id="ZPA-hW-8gd"/>
@@ -423,11 +424,16 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1273" y="266"/>
+            <point key="canvasLocation" x="1286" y="258"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkmark" width="94" height="61"/>
         <image name="cross" width="62" height="62"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

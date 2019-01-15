@@ -11,6 +11,10 @@ import UIKit
  @auther Moath OTjman
  */
 open class MOHUD: UIViewController {
+    
+    /// Responsible for showing and hiding the hud
+    var hudstage: HUDStage!
+    
     static var me:MOHUD? {
         didSet {
             if let _m = me {
@@ -18,36 +22,36 @@ open class MOHUD: UIViewController {
             }
         }
     }
-    /// Responsible for showing and hiding the hud
-    var hudstage: HUDStage!
-
+    
     //MARK: Outlets
-    @IBOutlet weak var loaderContainer: UIVisualEffectView?
-    @IBOutlet weak var errorLabel: UILabel?
-    @IBOutlet weak var statusLabel: UILabel?
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
-    @IBOutlet weak var buttonsContainer: UIView?
-    @IBOutlet weak var continueButton: UIButton?
-    @IBOutlet weak var cancelButton: UIButton?
-    @IBOutlet weak var successLabcel: UILabel?
-    @IBOutlet weak var subTitleLabel: UILabel?
+    @IBOutlet var loaderContainer: UIVisualEffectView?
+    @IBOutlet var errorLabel: UILabel?
+    @IBOutlet var statusLabel: UILabel?
+    @IBOutlet var titleLabel: UILabel?
+    @IBOutlet var activityIndicator: UIActivityIndicatorView?
+    @IBOutlet var buttonsContainer: UIView?
+    @IBOutlet var continueButton: UIButton?
+    @IBOutlet var cancelButton: UIButton?
+    @IBOutlet var successLabcel: UILabel?
+    @IBOutlet var subTitleLabel: UILabel?
     
     // Closures
     /// executed when user taps on Continue button
-    open static var onContinoue: (() -> Void)?
+    public static var onContinoue: (() -> Void)?
     /// executed when user taps on Cancel button
-    open static var onCancel: (() -> Void)?
+    public static var onCancel: (() -> Void)?
     /// viewwillappear override
     override open func viewWillAppear(_ animated: Bool) {
         if MOHUD.me != nil {
             self.commonSetup(MOHUD.me!)
         }
     }
+    
     //MARK: Constructor
     class func ME(_ _me:MOHUD?) {
         me = _me
     }
+    
     //MARK: Factory
     class func MakeProgressHUD() {
         ME(self.make(.progress))
@@ -117,7 +121,7 @@ open class MOHUD: UIViewController {
         dismissWith {}
     }
     
-    open class func dismissWith(animated: Bool = true, completed: @escaping (Void) -> Void) {
+    open class func dismissWith(animated: Bool = true, completed: @escaping () -> Void) {
         MOHUD.me?.hudstage.hide()
         completed()
     }
@@ -142,17 +146,17 @@ open class MOHUD: UIViewController {
         me?.cancelButton?.setTitleColor(isDark ? UIColor.white : UIColor.black, for: UIControlState())
     }
     /// hide Timer used when waiting for a hud to hide
-    open static func hideAfter(_ delay: TimeInterval) {
+    public static func hideAfter(_ delay: TimeInterval) {
         MOHUD.me?.hide(afterDelay: delay)
     }
+    
     fileprivate var hideTimer: Timer?
     fileprivate func hide(afterDelay delay: TimeInterval) {
         hideTimer?.invalidate()
         hideTimer = Timer.scheduledTimer(timeInterval: delay, target: self.classForCoder, selector: #selector(MOHUD.dismiss), userInfo: nil, repeats: false)
     }
-    
-    
 }
+
 // MARK: - IBActions
 extension MOHUD {
     @IBAction fileprivate func hideHud(_ sender: AnyObject? = nil) {
@@ -246,13 +250,13 @@ extension MOHUD {
         }
     }
 }
+
 /**
  Default Texts Used by the HUDs
  These Can be changed before showing the HUD.
  They are also localization ready .
  @auther Moath Othman
  */
-
 public struct MOHUDTexts {
     public static var continueButtonTitle = MOHUDDefaultTexts.continueButtonTitle
     public static var cancelButtonTitle = MOHUDDefaultTexts.cancelButtonTitle
